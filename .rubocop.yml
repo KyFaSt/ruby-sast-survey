@@ -1,0 +1,23 @@
+require:
+  - rubocop-rails
+  - rubocop-performance
+
+AllCops:
+  NewCops: enable
+  TargetRubyVersion: 3.0
+  Exclude:
+    - 'db/**/*'
+    - 'config/**/*'
+    - 'script/**/*'
+    - 'bin/{rails,rake}'
+    - 'vendor/**/*'
+
+# Enable security cops
+Security/Eval:
+  Enabled: true
+
+Security/Open:
+  Enabled: true
+
+Rails/OutputSafety:
+  Enabled: true

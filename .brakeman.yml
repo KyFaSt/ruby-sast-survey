@@ -1,0 +1,21 @@
+check_arguments: true
+check_routes: true
+compile_rails: true
+ignore_model_output: false
+min_confidence: 2
+output_formats:
+  - json
+  - text
+quiet: false
+rails3: false
+report_direct: true
+safe_methods:
+  - safe_method1
+  - safe_method2
+
+:skip_libs:
+  - 'db/**/*'
+    - 'config/**/*'
+    - 'script/**/*'
+    - 'bin/{rails,rake}'
+    - 'vendor/**/*'

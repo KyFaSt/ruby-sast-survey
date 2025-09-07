@@ -1,0 +1,8 @@
+id: sql-injection
+language: ruby
+rule:
+  any:
+    - pattern: $_.execute($STR)
+    - pattern: $_.where($STR)
+message: "Potential SQL injection vulnerability detected"
+severity: error

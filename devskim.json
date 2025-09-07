@@ -1,0 +1,44 @@
+{
+  "version": "1.0.0",
+  "rules": [
+    {
+      "id": "ruby-sql-injection",
+      "name": "SQL Injection",
+      "tags": ["security", "sql"],
+      "severity": "critical",
+      "patterns": [
+        {
+          "pattern": "\\b(execute|query|find_by_sql)\\s*\\(\\s*['\"].*#\\{.*\\}.*['\"]",
+          "type": "regex",
+          "scopes": ["code.ruby"]
+        }
+      ]
+    },
+    {
+      "id": "ruby-command-injection",
+      "name": "Command Injection",
+      "tags": ["security", "command"],
+      "severity": "critical",
+      "patterns": [
+        {
+          "pattern": "\\b(system|exec|`).*#\\{.*\\}",
+          "type": "regex",
+          "scopes": ["code.ruby"]
+        }
+      ]
+    },
+    {
+      "id": "ruby-eval-usage",
+      "name": "Dangerous eval usage",
+      "tags": ["security", "eval"],
+      "severity": "important",
+      "patterns": [
+        {
+          "pattern": "\\beval\\s*\\(",
+          "type": "regex",
+          "scopes": ["code.ruby"]
+        }
+      ]
+    }
+  ]
+}

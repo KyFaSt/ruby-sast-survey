@@ -1,0 +1,20 @@
+rules:
+  - id: sql-injection-rails
+    pattern: |
+      User.where("... #{$PARAM} ...")
+    message: Potential SQL injection vulnerability
+    languages: [ruby]
+    severity: ERROR
+
+  - id: open-redirect
+    pattern: redirect_to params[...]
+    message: Potential open redirect vulnerability
+    languages: [ruby]
+    severity: WARNING
+
+  - id: mass-assignment
+    pattern: |
+      params.require(:user).permit(..., :admin, ...)
+    message: Mass assignment on admin field
+    languages: [ruby]
+    severity: ERROR

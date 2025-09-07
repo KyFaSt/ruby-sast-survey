@@ -1,0 +1,8 @@
+id: command-injection
+language: ruby
+rule:
+  any:
+    - pattern: system($CMD)
+    - pattern: '`$CMD`'
+message: "Potential command injection vulnerability"
+severity: error
