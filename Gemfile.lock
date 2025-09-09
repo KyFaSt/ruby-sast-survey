@@ -120,7 +120,11 @@ GEM
     net-smtp (0.5.1)
       net-protocol
     nio4r (2.7.4)
+    nokogiri (1.18.9-aarch64-linux-gnu)
+      racc (~> 1.4)
     nokogiri (1.18.9-arm64-darwin)
+      racc (~> 1.4)
+    nokogiri (1.18.9-x86_64-linux-gnu)
       racc (~> 1.4)
     parallel (1.27.0)
     parser (3.3.9.0)
@@ -208,8 +212,12 @@ GEM
     sorbet (0.6.12495)
       sorbet-static (= 0.6.12495)
     sorbet-runtime (0.6.12495)
+    sorbet-static (0.6.12495-aarch64-linux)
     sorbet-static (0.6.12495-universal-darwin)
+    sorbet-static (0.6.12495-x86_64-linux)
+    sqlite3 (2.7.3-aarch64-linux-gnu)
     sqlite3 (2.7.3-arm64-darwin)
+    sqlite3 (2.7.3-x86_64-linux-gnu)
     stringio (3.1.7)
     thor (1.4.0)
     timeout (0.4.3)
@@ -227,7 +235,9 @@ GEM
     zeitwerk (2.7.3)
 
 PLATFORMS
+  aarch64-linux
   arm64-darwin-24
+  x86_64-linux
 
 DEPENDENCIES
   brakeman

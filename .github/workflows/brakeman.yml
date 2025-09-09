@@ -1,0 +1,105 @@
+name: Brakeman Security Scan
+
+on:
+  push:
+    branches: [ main, develop ]
+  pull_request:
+    branches: [ main ]
+  workflow_dispatch:
+
+permissions:
+  contents: read
+  security-events: write
+  actions: read
+
+jobs:
+  brakeman:
+    name: Brakeman Static Analysis
+    runs-on: ubuntu-latest
+    
+    steps:
+    - name: Checkout code
+      uses: actions/checkout@v3
+      
+    - name: Set up Ruby
+      uses: ruby/setup-ruby@v1
+      with:
+        ruby-version: 3.2
+        bundler-cache: true
+        
+    - name: Create results directory
+      run: mkdir -p results-actions
+        
+    - name: Run Brakeman scan
+      run: |
+        bundle exec brakeman --force --format json --output results-actions/brakeman-results.json
+        
+    - name: Convert Brakeman results to SARIF
+      run: |
+        # Create a simple SARIF converter for Brakeman
+        cat > convert_brakeman_to_sarif.rb << 'EOF'
+        require 'json'
+        
+        brakeman_data = JSON.parse(File.read('results-actions/brakeman-results.json'))
+        
+        sarif = {
+          "$schema": "https://schemastore.azurewebsites.net/schemas/json/sarif-2.1.0.json",
+          "version": "2.1.0",
+          "runs": [{
+            "tool": {
+              "driver": {
+                "name": "Brakeman",
+                "version": brakeman_data["scan_info"]["brakeman_version"],
+                "informationUri": "https://brakemanscanner.org/",
+                "rules": []
+              }
+            },
+            "results": []
+          }]
+        }
+        
+        brakeman_data["warnings"].each do |warning|
+          rule_id = warning["warning_type"].downcase.gsub(/\s+/, '_')
+          
+          # Add rule if not exists
+          unless sarif[:runs][0][:tool][:driver][:rules].any? { |r| r[:id] == rule_id }
+            sarif[:runs][0][:tool][:driver][:rules] << {
+              id: rule_id,
+              name: warning["warning_type"],
+              shortDescription: { text: warning["message"] },
+              fullDescription: { text: warning["message"] },
+              defaultConfiguration: { level: warning["confidence"] == "High" ? "error" : "warning" }
+            }
+          end
+          
+          result = {
+            ruleId: rule_id,
+            message: { text: warning["message"] },
+            locations: [{
+              physicalLocation: {
+                artifactLocation: { uri: warning["file"] },
+                region: { startLine: warning["line"] || 1 }
+              }
+            }],
+            level: warning["confidence"] == "High" ? "error" : "warning"
+          }
+          
+          sarif[:runs][0][:results] << result
+        end
+        
+        File.write('results-actions/brakeman-results.sarif', JSON.pretty_generate(sarif))
+        EOF
+        
+        ruby convert_brakeman_to_sarif.rb
+        
+    - name: Upload Brakeman SARIF results
+      uses: github/codeql-action/upload-sarif@v3
+      with:
+        sarif_file: results-actions/brakeman-results.sarif
+        category: brakeman
+        
+    - name: Upload results as artifacts
+      uses: actions/upload-artifact@v3
+      with:
+        name: brakeman-results
+        path: results-actions/

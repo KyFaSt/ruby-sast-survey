@@ -84,15 +84,27 @@ ast-grep scan
 ### 5. DevSkim
 Microsoft's lightweight security linter.
 ```bash
-devskim analyze . --output-format json --output-file docs/results/devskim.json
+# Install (requires .NET SDK)
+brew install --cask dotnet-sdk
+dotnet tool install --global Microsoft.CST.DevSkim.CLI
+export PATH="$PATH:$HOME/.dotnet/tools"
+
+# Run analysis
+devskim analyze -I . -O docs/results/devskim.sarif -f sarif
+devskim analyze -I . -O docs/results/devskim.txt -f text
 ```
 
 ### 6. CodeQL
 GitHub's semantic code analysis engine.
 ```bash
-# Requires CodeQL CLI setup
-codeql database create ruby-db --language=ruby
-codeql database analyze ruby-db --format=json --output=docs/results/codeql.json
+# Create database
+codeql database create ruby-db --language=ruby --source-root=.
+
+# Download query pack
+codeql pack download codeql/ruby-queries
+
+# Run analysis
+codeql database analyze ruby-db codeql/ruby-queries:codeql-suites/ruby-security-and-quality.qls --format=sarif-latest --output=docs/results/codeql.sarif
 ```
 
 ## Quick Start
@@ -104,110 +116,117 @@ codeql database analyze ruby-db --format=json --output=docs/results/codeql.json
    bundle install
    ```
 
-2. **Run individual tools**:
+2. **Install additional tools** (first time only):
    ```bash
-   # Brakeman (Rails-focused, requires --force for non-Rails apps)
-   bundle exec brakeman --force
+   # Install ast-grep
+   brew install ast-grep
    
-   # RuboCop (general Ruby)
-   bundle exec rubocop
+   # Install opengrep
+   curl -fsSL https://raw.githubusercontent.com/opengrep/opengrep/main/install.sh | bash
+   export PATH='$HOME/.opengrep/cli/latest':$PATH
    
-   # Opengrep (custom patterns)
-   opengrep --config=opengrep.yml .
+   # Install CodeQL CLI
+   brew install codeql
+   
+   # Download CodeQL query pack
+   codeql pack download codeql/ruby-queries
+   
+   # Install DevSkim (requires .NET SDK)
+   brew install --cask dotnet-sdk
+   dotnet tool install --global Microsoft.CST.DevSkim.CLI
+   export PATH="$PATH:$HOME/.dotnet/tools"
    ```
 
-3. **Run all tools via GitHub Actions**:
+3. **Run individual tools**:
+   ```bash
+   # RuboCop - Ruby static code analyzer
+   bundle exec rubocop --format json --out docs/results/rubocop.json
+   
+   # Brakeman - Rails security scanner (use --force for non-Rails apps)
+   bundle exec brakeman --force --format json --output docs/results/brakeman.json
+   
+   # Sorbet - Type checker
+   bundle exec srb typecheck 2>&1 | tee docs/results/sorbet.txt
+   
+   # AST-grep - Structural search
+   ast-grep scan --json=pretty > docs/results/ast-grep.json
+   
+   # Opengrep - Pattern-based security scanner
+   opengrep --config=opengrep.yml --json --output=docs/results/opengrep.json .
+   
+   # CodeQL - Semantic analysis
+   codeql database create ruby-db --language=ruby --source-root=.
+   codeql database analyze ruby-db codeql/ruby-queries:codeql-suites/ruby-security-and-quality.qls --format=sarif-latest --output=docs/results/codeql.sarif
+   
+   # DevSkim - Microsoft security linter
+   devskim analyze -I . -O docs/results/devskim.sarif -f sarif
+   devskim analyze -I . -O docs/results/devskim.txt -f text
+   ```
+
+4. **Run all tools via GitHub Actions**:
    Push to repository or create PR to trigger all workflows.
 
-## Running Tools Locally
+## Testing GitHub Actions Locally with Act
 
-After running `bundle install`, you can execute any of the Ruby-based tools locally:
+This project uses [act](https://github.com/nektos/act) to test GitHub Actions workflows locally before pushing to GitHub.
 
-### RuboCop
+### Setup Act
+
+   ```bash
+   brew install act
+   ```
+
+### Running Actions Locally
+
+**List available workflows**:
 ```bash
-# Run with default configuration
-bundle exec rubocop
-
-# Run on specific files/directories
-bundle exec rubocop app.rb controllers/ models/
-
-# Generate JSON output
-bundle exec rubocop --format json --out docs/results/rubocop.json
+act -l
 ```
 
-### Brakeman
+**Run all workflows** (simulates push event):
 ```bash
-# Run with default configuration (uses .brakeman.yml)
-# Note: Use --force since this is a Ruby sample without full Rails installation
-bundle exec brakeman --force
-
-# Generate JSON output
-bundle exec brakeman --force --format json --output docs/results/brakeman.json
-
-# Show only high confidence warnings
-bundle exec brakeman --force --confidence-level 2
+act push
 ```
 
-### Sorbet
+**Run specific workflow**:
 ```bash
-# Initialize Sorbet in the project (first time only)
-# Note: May require additional gems like ruby_parser for full initialization
-bundle exec srb init
-
-# Run type checking and save output
-bundle exec srb typecheck 2>&1 | tee docs/results/sorbet.txt
-
-# Type check specific files
-bundle exec srb typecheck app.rb
-
-# Generate RBI files for gems (requires full setup)
-bundle exec srb rbi gems
+# Test individual SAST tools
+act -W .github/workflows/brakeman.yml
+act -W .github/workflows/rubocop.yml
+act -W .github/workflows/codeql.yml
+act -W .github/workflows/opengrep.yml
+act -W .github/workflows/ast-grep.yml
+act -W .github/workflows/devskim.yml
+act -W .github/workflows/sorbet.yml
 ```
 
-**Note**: Sorbet initialization may fail in sample projects due to missing dependencies. The type checker itself works but will report many errors in sample/demo code that lacks proper type annotations. With the added type annotations, Sorbet reports 193 errors, which is expected for this sample application due to missing Sinatra type definitions and intentionally vulnerable code patterns.
+### Act Configuration
 
-### AST-grep
-```bash
-# Run with JSON output (requires ast-grep project initialization)
-ast-grep scan --json=pretty > docs/results/ast-grep.json
+Act uses Docker containers to simulate GitHub Actions runners. On first run, it will:
+- Ask you to choose a Docker image size (recommend "Medium" for Ruby projects)
+- Download the appropriate runner image
+- Cache it for future runs
 
-# Run with default output
-ast-grep scan
+**Note**: Act runs are faster than GitHub Actions but may have slight differences due to the local Docker environment vs GitHub's hosted runners.
 
-# Initialize ast-grep project (first time only)
-ast-grep new
+### Troubleshooting Act
 
-# Test individual patterns
-ast-grep --pattern 'system($A)' --lang ruby .
-```
+**Common Issues on Apple Silicon (M1/M2) Macs:**
 
-### Opengrep (Semgrep)
-```bash
-# Install opengrep (first time only)
-curl -fsSL https://raw.githubusercontent.com/opengrep/opengrep/main/install.sh | bash
-export PATH='/Users/kyliestradley/.opengrep/cli/latest':$PATH
+1. **CodeQL ARM64 Error**: CodeQL doesn't support linux/arm64. Use x86_64 containers:
+   ```bash
+   act --container-architecture linux/amd64
+   ```
 
-# Run with JSON output
-opengrep --config=opengrep.yml --json --output=docs/results/opengrep.json .
+2. **Platform Lock Error**: Add Linux platforms to Gemfile.lock:
+   ```bash
+   bundle lock --add-platform aarch64-linux x86_64-linux
+   ```
 
-# Run with default output
-opengrep --config=opengrep.yml .
-
-# Test with built-in rules
-opengrep --config=auto .
-```
-
-## Results
-
-Tool outputs are saved in the `docs/results/` directory:
-
-- **AST-grep**: 4 findings (`ast-grep.json`)
-- **Opengrep**: 1 finding (`opengrep.json`)
-- **Brakeman**: 8 warnings (`brakeman.json`)
-- **RuboCop**: 28 offenses (`rubocop.json`)
-- **Sorbet**: 193 errors (`sorbet.txt`)
-
-See `docs/tool-comparison.md` for detailed analysis of each tool's strengths and weaknesses.
+3. **Node.js Missing Error**: Use an image with Node.js:
+   ```bash
+   act --container-architecture linux/amd64 -P ubuntu-latest=node:18-bullseye
+   ```
 
 ## Contributing
 

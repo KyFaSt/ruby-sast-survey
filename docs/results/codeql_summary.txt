@@ -1,0 +1,25 @@
+# CodeQL Analysis Results Summary
+
+## Total Issues Found: 3
+
+### Critical/High Severity Issues:
+1. **SQL Injection** (`rb/sql-injection`) - HIGH
+   - File: `controllers/users_controller.rb:13`
+   - Description: SQL query built from user-controlled sources
+   - Finding: `"name LIKE '%#{params[:name]}%'"` - Direct parameter interpolation
+
+2. **Path Injection** (`rb/path-injection`) - HIGH  
+   - File: `app.rb:50`
+   - Description: Uncontrolled data used in path expression
+   - Finding: `"files/#{filename}"` where filename comes from user params
+
+3. **CSRF Protection Not Enabled** (`rb/csrf-protection-not-enabled`) - MEDIUM
+   - File: `controllers/users_controller.rb:7-38`
+   - Description: Controller lacks CSRF protection mechanisms
+
+## Analysis Summary:
+- **6 files analyzed** (app.rb, controllers/, models/, Gemfile)
+- **119 lines of code** total
+- **0 extraction errors**
+- CodeQL identified the same SQL injection and path injection vulnerabilities found by other tools
+- Also detected missing CSRF protection which some other tools missed

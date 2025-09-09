@@ -1,208 +1,3 @@
-./sorbet/rbi/sorbet-typed/lib/activerecord/all/activerecord.rbi:1008: Parent of class `ActiveRecord::ConnectionNotEstablished` redefined from `ActiveRecord::AdapterError` to `ActiveRecord::ActiveRecordError` https://srb.help/5012
-    1008 |  class ConnectionNotEstablished < ActiveRecordError; end
-                                             ^^^^^^^^^^^^^^^^^
-
-./sorbet/rbi/sorbet-typed/lib/activerecord/all/activerecord.rbi:1063: Parent of class `ActiveRecord::StatementInvalid` redefined from `ActiveRecord::AdapterError` to `ActiveRecord::ActiveRecordError` https://srb.help/5012
-    1063 |  class StatementInvalid < ActiveRecordError; end
-                                     ^^^^^^^^^^^^^^^^^
-
-./sorbet/rbi/sorbet-typed/lib/activerecord/all/activerecord.rbi:365: Unable to resolve constant `ConnectionHandling` https://srb.help/5002
-     365 |  extend ActiveRecord::ConnectionHandling
-                   ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-  Did you mean `ActiveRecord::ConnectionFailed`? Use `-a` to autocorrect
-    ./sorbet/rbi/sorbet-typed/lib/activerecord/all/activerecord.rbi:365: Replace with `ActiveRecord::ConnectionFailed`
-     365 |  extend ActiveRecord::ConnectionHandling
-                   ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-    ./sorbet/rbi/gems/activerecord.rbi:1496: `ActiveRecord::ConnectionFailed` defined here
-    1496 |class ActiveRecord::ConnectionFailed < ActiveRecord::QueryAborted
-          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-
-./sorbet/rbi/sorbet-typed/lib/activerecord/all/activerecord.rbi:365: Unable to resolve constant `ConnectionHandling` https://srb.help/5002
-     365 |  extend ActiveRecord::ConnectionHandling
-                   ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-  Did you mean `ActiveRecord::ConnectionFailed`? Use `-a` to autocorrect
-    ./sorbet/rbi/sorbet-typed/lib/activerecord/all/activerecord.rbi:365: Replace with `ActiveRecord::ConnectionFailed`
-     365 |  extend ActiveRecord::ConnectionHandling
-                   ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-    ./sorbet/rbi/gems/activerecord.rbi:1496: `ActiveRecord::ConnectionFailed` defined here
-    1496 |class ActiveRecord::ConnectionFailed < ActiveRecord::QueryAborted
-          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-
-./sorbet/rbi/sorbet-typed/lib/activerecord/all/activerecord.rbi:371: Unable to resolve constant `Enum` https://srb.help/5002
-     371 |  extend ActiveRecord::Enum
-                   ^^^^^^^^^^^^^^^^^^
-  Did you mean `Fixnum`? Use `-a` to autocorrect
-    ./sorbet/rbi/sorbet-typed/lib/activerecord/all/activerecord.rbi:371: Replace with `Fixnum`
-     371 |  extend ActiveRecord::Enum
-                   ^^^^^^^^^^^^^^^^^^
-    https://github.com/sorbet/sorbet/tree/d8bc4cf8c32907c73fc4e37bad875ffaff7658c6/rbi/core/fixnum.rbi#L5: `Fixnum` defined here
-     5 |Fixnum = Integer
-        ^^^^^^
-  Did you mean `ENV`? Use `-a` to autocorrect
-    ./sorbet/rbi/sorbet-typed/lib/activerecord/all/activerecord.rbi:371: Replace with `ENV`
-     371 |  extend ActiveRecord::Enum
-                   ^^^^^^^^^^^^^^^^^^
-    https://github.com/sorbet/sorbet/tree/d8bc4cf8c32907c73fc4e37bad875ffaff7658c6/rbi/sorbet/sorbet.rbi#L387: `ENV` defined here
-     387 |::ENV = T.let(T.unsafe(nil), Sorbet::Private::Static::ENVClass)
-          ^^^^^
-  Did you mean `ERB`? Use `-a` to autocorrect
-    ./sorbet/rbi/sorbet-typed/lib/activerecord/all/activerecord.rbi:371: Replace with `ERB`
-     371 |  extend ActiveRecord::Enum
-                   ^^^^^^^^^^^^^^^^^^
-    https://github.com/sorbet/sorbet/tree/d8bc4cf8c32907c73fc4e37bad875ffaff7658c6/rbi/stdlib/erb.rbi#L269: `ERB` defined here
-     269 |class ERB
-          ^^^^^^^^^
-
-./sorbet/rbi/sorbet-typed/lib/activerecord/all/activerecord.rbi:371: Unable to resolve constant `Enum` https://srb.help/5002
-     371 |  extend ActiveRecord::Enum
-                   ^^^^^^^^^^^^^^^^^^
-  Did you mean `Fixnum`? Use `-a` to autocorrect
-    ./sorbet/rbi/sorbet-typed/lib/activerecord/all/activerecord.rbi:371: Replace with `Fixnum`
-     371 |  extend ActiveRecord::Enum
-                   ^^^^^^^^^^^^^^^^^^
-    https://github.com/sorbet/sorbet/tree/d8bc4cf8c32907c73fc4e37bad875ffaff7658c6/rbi/core/fixnum.rbi#L5: `Fixnum` defined here
-     5 |Fixnum = Integer
-        ^^^^^^
-  Did you mean `ENV`? Use `-a` to autocorrect
-    ./sorbet/rbi/sorbet-typed/lib/activerecord/all/activerecord.rbi:371: Replace with `ENV`
-     371 |  extend ActiveRecord::Enum
-                   ^^^^^^^^^^^^^^^^^^
-    https://github.com/sorbet/sorbet/tree/d8bc4cf8c32907c73fc4e37bad875ffaff7658c6/rbi/sorbet/sorbet.rbi#L387: `ENV` defined here
-     387 |::ENV = T.let(T.unsafe(nil), Sorbet::Private::Static::ENVClass)
-          ^^^^^
-  Did you mean `ERB`? Use `-a` to autocorrect
-    ./sorbet/rbi/sorbet-typed/lib/activerecord/all/activerecord.rbi:371: Replace with `ERB`
-     371 |  extend ActiveRecord::Enum
-                   ^^^^^^^^^^^^^^^^^^
-    https://github.com/sorbet/sorbet/tree/d8bc4cf8c32907c73fc4e37bad875ffaff7658c6/rbi/stdlib/erb.rbi#L269: `ERB` defined here
-     269 |class ERB
-          ^^^^^^^^^
-
-./sorbet/rbi/sorbet-typed/lib/activerecord/all/activerecord.rbi:382: Unable to resolve constant `Default` https://srb.help/5002
-     382 |  include ActiveRecord::Scoping::Default # via ActiveRecord::Scoping#included hook
-                    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-  Did you mean `ActiveRecord::Result`? Use `-a` to autocorrect
-    ./sorbet/rbi/sorbet-typed/lib/activerecord/all/activerecord.rbi:382: Replace with `ActiveRecord::Result`
-     382 |  include ActiveRecord::Scoping::Default # via ActiveRecord::Scoping#included hook
-                    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-    ./sorbet/rbi/sorbet-typed/lib/activerecord/all/activerecord.rbi:981: `ActiveRecord::Result` defined here
-     981 |class ActiveRecord::Result
-          ^^^^^^^^^^^^^^^^^^^^^^^^^^
-
-./sorbet/rbi/sorbet-typed/lib/activerecord/all/activerecord.rbi:382: Unable to resolve constant `Default` https://srb.help/5002
-     382 |  include ActiveRecord::Scoping::Default # via ActiveRecord::Scoping#included hook
-                    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-  Did you mean `ActiveRecord::Result`? Use `-a` to autocorrect
-    ./sorbet/rbi/sorbet-typed/lib/activerecord/all/activerecord.rbi:382: Replace with `ActiveRecord::Result`
-     382 |  include ActiveRecord::Scoping::Default # via ActiveRecord::Scoping#included hook
-                    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-    ./sorbet/rbi/sorbet-typed/lib/activerecord/all/activerecord.rbi:981: `ActiveRecord::Result` defined here
-     981 |class ActiveRecord::Result
-          ^^^^^^^^^^^^^^^^^^^^^^^^^^
-
-./sorbet/rbi/sorbet-typed/lib/activerecord/all/activerecord.rbi:398: Unable to resolve constant `BeforeTypeCast` https://srb.help/5002
-     398 |  include ActiveRecord::AttributeMethods::BeforeTypeCast # via ActiveRecord::AttributeMethods#included hook
-                    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-
-./sorbet/rbi/sorbet-typed/lib/activerecord/all/activerecord.rbi:398: Unable to resolve constant `BeforeTypeCast` https://srb.help/5002
-     398 |  include ActiveRecord::AttributeMethods::BeforeTypeCast # via ActiveRecord::AttributeMethods#included hook
-                    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-
-./sorbet/rbi/sorbet-typed/lib/activerecord/all/activerecord.rbi:399: Unable to resolve constant `Query` https://srb.help/5002
-     399 |  include ActiveRecord::AttributeMethods::Query # via ActiveRecord::AttributeMethods#included hook
-                    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-
-./sorbet/rbi/sorbet-typed/lib/activerecord/all/activerecord.rbi:399: Unable to resolve constant `Query` https://srb.help/5002
-     399 |  include ActiveRecord::AttributeMethods::Query # via ActiveRecord::AttributeMethods#included hook
-                    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-
-./sorbet/rbi/sorbet-typed/lib/activerecord/all/activerecord.rbi:1120: Unable to resolve constant `ColumnDefinition` https://srb.help/5002
-    1120 |  sig { returns(T::Array[ActiveRecord::ConnectionAdapters::ColumnDefinition]) }
-                                   ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-
-./sorbet/rbi/sorbet-typed/lib/activerecord/all/activerecord.rbi:1124: Unable to resolve constant `ColumnDefinition` https://srb.help/5002
-    1124 |  sig { params(name: T.any(String, Symbol)).returns(ActiveRecord::ConnectionAdapters::ColumnDefinition) }
-                                                              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-
-./sorbet/rbi/sorbet-typed/lib/activerecord/all/activerecord.rbi:693: Malformed type declaration. Generic class without type arguments `Class` https://srb.help/5046
-     693 |  sig { params(klass: Class).returns(T.untyped) }
-                                ^^^^^
-  Autocorrect: Use `-a` to autocorrect
-    ./sorbet/rbi/sorbet-typed/lib/activerecord/all/activerecord.rbi:693: Replace with `T::Class[T.anything]`
-     693 |  sig { params(klass: Class).returns(T.untyped) }
-                                ^^^^^
-
-./sorbet/rbi/sorbet-typed/lib/activerecord/all/activerecord.rbi:696: Malformed type declaration. Generic class without type arguments `Class` https://srb.help/5046
-     696 |  sig { params(klass: Class).returns(T.untyped) }
-                                ^^^^^
-  Autocorrect: Use `-a` to autocorrect
-    ./sorbet/rbi/sorbet-typed/lib/activerecord/all/activerecord.rbi:696: Replace with `T::Class[T.anything]`
-     696 |  sig { params(klass: Class).returns(T.untyped) }
-                                ^^^^^
-
-./sorbet/rbi/gems/actionpack.rbi:1311: Malformed `sig`. Type not specified for argument `block` https://srb.help/5003
-    1311 |  def merge!(other_hash, &block); end
-                                    ^^^^^
-    ./sorbet/rbi/sorbet-typed/lib/actionpack/all/actionpack.rbi:580: Signature
-     580 |  sig { params(other_hash: T.untyped).returns(ActionController::Parameters) }
-            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-
-./sorbet/rbi/gems/actionpack.rbi:1351: Malformed `sig`. Type not specified for argument `block` https://srb.help/5003
-    1351 |  def to_h(&block); end
-                      ^^^^^
-    ./sorbet/rbi/sorbet-typed/lib/actionpack/all/actionpack.rbi:712: Signature
-     712 |  sig { returns(ActiveSupport::HashWithIndifferentAccess) }
-            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-
-./sorbet/rbi/sorbet-typed/lib/activemodel/all/activemodel.rbi:104: Method `ActiveModel::Validations::ClassMethods#validate` redefined without matching argument count. Expected: `1`, got: `5` https://srb.help/4010
-     104 |  def validate(
-     105 |    *names,
-     106 |    if: nil,
-     107 |    on: nil,
-     108 |    prepend: false,
-     109 |    unless: nil
-     110 |  ); end
-    ./sorbet/rbi/gems/activemodel.rbi:484: Previous definition
-     484 |  def validate(*args, &block); end
-            ^^^^^^^^^^^^^^^^^^^^^^^^^^^
-
-./sorbet/rbi/sorbet-typed/lib/activemodel/all/activemodel.rbi:147: Method `ActiveModel::Validations::ClassMethods#validates` redefined without matching argument count. Expected: `1`, got: `19` https://srb.help/4010
-     147 |  def validates(
-     148 |    *names,
-     149 |    absence: false,
-     150 |    acceptance: {},
-     151 |    allow_blank: false,
-         |...
-     163 |    strict: false,
-     164 |    uniqueness: false,
-     165 |    unless: :_,
-     166 |    **kwargs
-     167 |  )
-    ./sorbet/rbi/gems/activemodel.rbi:486: Previous definition
-     486 |  def validates(*attributes); end
-            ^^^^^^^^^^^^^^^^^^^^^^^^^^
-
-./sorbet/rbi/sorbet-typed/lib/activemodel/all/activemodel.rbi:576: Method `ActiveModel::Errors#each` redefined without matching argument count. Expected: `2`, got: `0` https://srb.help/4010
-     576 |  def each(&blk); end
-            ^^^^^^^^^^^^^^
-    ./sorbet/rbi/gems/activemodel.rbi:217: Previous definition
-     217 |  def each(*args, **, &block); end
-            ^^^^^^^^^^^^^^^^^^^^^^^^^^^
-
-./sorbet/rbi/sorbet-typed/lib/activemodel/all/activemodel.rbi:636: Method `ActiveModel::Errors#add` redefined with argument `options` as a non-keyword argument https://srb.help/4010
-     636 |  def add(attribute, message = :invalid, options = {}); end
-            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-    ./sorbet/rbi/gems/activemodel.rbi:209: The corresponding argument `options` in the previous definition was a keyword argument
-     209 |  def add(attribute, type = nil, **options); end
-            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-
-./sorbet/rbi/sorbet-typed/lib/activemodel/all/activemodel.rbi:707: Method `ActiveModel::Errors#empty?` redefined without matching argument count. Expected: `2`, got: `1` https://srb.help/4010
-     707 |  def empty?(*args, &block); end
-            ^^^^^^^^^^^^^^^^^^^^^^^^^
-    ./sorbet/rbi/gems/activemodel.rbi:218: Previous definition
-     218 |  def empty?(*args, **, &block); end
-            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-
 ./sorbet/rbi/sorbet-typed/lib/actionpack/all/actionpack.rbi:26: Method `AbstractController::Callbacks::ClassMethods#after_action` redefined without matching argument count. Expected: `1`, got: `6` https://srb.help/4010
     26 |  def after_action(*names, except: nil, only: nil, if: nil, unless: nil, raise: true, &block); end
           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
@@ -368,13 +163,6 @@
      370 |  def current_page?(options = nil, check_parameters: nil, **options_as_kwargs); end
             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-./sorbet/rbi/gems/psych.rbi:422: Parent of class `Psych::Parser::Mark` redefined from `Object` to `Anonymous_Struct_4` https://srb.help/5012
-     422 |class Psych::Parser::Mark < Anonymous_Struct_4
-                                      ^^^^^^^^^^^^^^^^^^
-  Note:
-    Pass `--suppress-payload-superclass-redefinition-for=Psych::Parser::Mark` at the command line or in the `sorbet/config` file to silence this error.
-    Only use this to work around Ruby or gem upgrade incompatibilities.
-
 /Users/kyliestradley/.rbenv/versions/3.3.8/lib/ruby/gems/3.3.0/gems/prism-1.4.0/rbi/prism.rbi:5: Method `Prism.dump` redefined without matching argument count. Expected: `1`, got: `11` https://srb.help/4010
      5 |  def self.dump(source, command_line: nil, encoding: nil, filepath: nil, freeze: nil, frozen_string_literal: nil, line: nil, main_script: nil, partial_script: nil, scopes: nil, version: nil); end
           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
@@ -498,6 +286,231 @@
     16 |  sig { params(source: String, options: T::Hash[Symbol, T.untyped]).returns(Prism::LexCompat::Result) }
                                                                                     ^^^^^^^^^^^^^^^^
 
+./sorbet/rbi/sorbet-typed/lib/activesupport/all/activesupport.rbi:111: Method `NilClass#try` redefined without matching argument count. Expected: `1`, got: `2` https://srb.help/4010
+     111 |  def try(method_name = nil, *args, &b); end
+            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    ./sorbet/rbi/gems/activesupport.rbi:343: Previous definition
+     343 |  def try(*); end
+            ^^^^^^^^^^
+
+./sorbet/rbi/sorbet-typed/lib/activesupport/all/activesupport.rbi:120: Method `NilClass#try!` redefined without matching argument count. Expected: `1`, got: `2` https://srb.help/4010
+     120 |  def try!(method_name = nil, *args, &b); end
+            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    ./sorbet/rbi/gems/activesupport.rbi:342: Previous definition
+     342 |  def try!(*); end
+            ^^^^^^^^^^^
+
+./sorbet/rbi/sorbet-typed/lib/activesupport/all/activesupport.rbi:265: Method `String#truncate` redefined without matching argument count. Expected: `2`, got: `3` https://srb.help/4010
+     265 |  def truncate(truncate_at, separator: nil, omission: "..."); end
+            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    ./sorbet/rbi/gems/activesupport.rbi:427: Previous definition
+     427 |  def truncate(truncate_to, options = nil); end
+            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+./sorbet/rbi/sorbet-typed/lib/activesupport/all/activesupport.rbi:268: Method `String#truncate_words` redefined without matching argument count. Expected: `2`, got: `3` https://srb.help/4010
+     268 |  def truncate_words(words_count, separator: nil, omission: "..."); end
+            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    ./sorbet/rbi/gems/activesupport.rbi:429: Previous definition
+     429 |  def truncate_words(words_count, options = nil); end
+            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+./sorbet/rbi/sorbet-typed/lib/activesupport/all/activesupport.rbi:352: Method `Array#to_sentence` redefined without matching argument count. Expected: `1`, got: `4` https://srb.help/4010
+     352 |  def to_sentence(words_connector: ", ", two_words_connector: " and ", last_word_connector: ", and ", locale: nil); end
+            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    ./sorbet/rbi/gems/activesupport.rbi:384: Previous definition
+     384 |  def to_sentence(options = nil); end
+            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+./sorbet/rbi/sorbet-typed/lib/activesupport/all/activesupport.rbi:384: Method `ActiveSupport::NumberHelper#number_to_currency` redefined without matching argument count. Expected: `2`, got: `8` https://srb.help/4010
+     384 |  def number_to_currency(number, locale: :en, precision: 2, unit: "$", separator: ".", delimiter: ",", format: "%u%n", negative_format: "-%u%n"); end
+            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    ./sorbet/rbi/gems/activesupport.rbi:2408: Previous definition
+    2408 |  def number_to_currency(number, options = nil); end
+            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+./sorbet/rbi/sorbet-typed/lib/activesupport/all/activesupport.rbi:395: Method `ActiveSupport::NumberHelper#number_to_delimited` redefined without matching argument count. Expected: `2`, got: `5` https://srb.help/4010
+     395 |  def number_to_delimited(number, locale: :en, delimiter: ",", separator: ".", delimiter_pattern: nil); end
+            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    ./sorbet/rbi/gems/activesupport.rbi:2409: Previous definition
+    2409 |  def number_to_delimited(number, options = nil); end
+            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+./sorbet/rbi/sorbet-typed/lib/activesupport/all/activesupport.rbi:410: Method `ActiveSupport::NumberHelper#number_to_human` redefined without matching argument count. Expected: `2`, got: `9` https://srb.help/4010
+     410 |  def number_to_human(number, locale: :en, precision: 3, significant: true, separator: ".", delimiter: "", strip_insignificant_zeros: true, units: {}, format: "%n %u"); end
+            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    ./sorbet/rbi/gems/activesupport.rbi:2410: Previous definition
+    2410 |  def number_to_human(number, options = nil); end
+            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+./sorbet/rbi/sorbet-typed/lib/activesupport/all/activesupport.rbi:423: Method `ActiveSupport::NumberHelper#number_to_human_size` redefined without matching argument count. Expected: `2`, got: `7` https://srb.help/4010
+     423 |  def number_to_human_size(number, locale: :en, precision: 3, significant: true, separator: ".", delimiter: "", strip_insignificant_zeros: true); end
+            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    ./sorbet/rbi/gems/activesupport.rbi:2411: Previous definition
+    2411 |  def number_to_human_size(number, options = nil); end
+            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+./sorbet/rbi/sorbet-typed/lib/activesupport/all/activesupport.rbi:437: Method `ActiveSupport::NumberHelper#number_to_percentage` redefined without matching argument count. Expected: `2`, got: `8` https://srb.help/4010
+     437 |  def number_to_percentage(number, locale: :en, precision: 3, significant: false, separator: ".", delimiter: "", strip_insignificant_zeros: false, format: "%n%"); end
+            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    ./sorbet/rbi/gems/activesupport.rbi:2412: Previous definition
+    2412 |  def number_to_percentage(number, options = nil); end
+            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+./sorbet/rbi/sorbet-typed/lib/activesupport/all/activesupport.rbi:449: Method `ActiveSupport::NumberHelper#number_to_phone` redefined without matching argument count. Expected: `2`, got: `6` https://srb.help/4010
+     449 |  def number_to_phone(number, area_code: false, delimiter: "-", extension: nil, country_code: nil, pattern: nil); end
+            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    ./sorbet/rbi/gems/activesupport.rbi:2413: Previous definition
+    2413 |  def number_to_phone(number, options = nil); end
+            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+./sorbet/rbi/sorbet-typed/lib/activesupport/all/activesupport.rbi:462: Method `ActiveSupport::NumberHelper#number_to_rounded` redefined without matching argument count. Expected: `2`, got: `7` https://srb.help/4010
+     462 |  def number_to_rounded(number, locale: :en, precision: 3, significant: false, separator: ".", delimiter: "", strip_insignificant_zeros: false); end
+            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    ./sorbet/rbi/gems/activesupport.rbi:2414: Previous definition
+    2414 |  def number_to_rounded(number, options = nil); end
+            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+./sorbet/rbi/sorbet-typed/lib/activesupport/all/activesupport.rbi:789: Method `ActiveSupport::TimeWithZone#to_s` redefined without matching argument count. Expected: `0`, got: `1` https://srb.help/4010
+     789 |  def to_s(format = :default); end
+            ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    ./sorbet/rbi/gems/activesupport.rbi:1927: Previous definition
+    1927 |  def to_s; end
+            ^^^^^^^^
+
+./sorbet/rbi/sorbet-typed/lib/activesupport/all/activesupport.rbi:199: Unable to resolve constant `StringInquirer` https://srb.help/5002
+     199 |  sig { returns(ActiveSupport::StringInquirer) }
+                          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+./sorbet/rbi/sorbet-typed/lib/activesupport/all/activesupport.rbi:208: Unable to resolve constant `Chars` https://srb.help/5002
+     208 |  sig { returns(ActiveSupport::Multibyte::Chars) }
+                          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+./sorbet/rbi/sorbet-typed/lib/activesupport/all/activesupport.rbi:1377: Malformed `sig`. Type not specified for argument `block` https://srb.help/5003
+    1377 |  def deep_merge(other_hash, &block); end
+                                        ^^^^^
+    ./sorbet/rbi/sorbet-typed/lib/activesupport/all/activesupport.rbi:1376: Signature
+    1376 |  sig { params(other_hash: T::Hash[T.untyped, T.untyped]).returns(T::Hash[T.untyped, T.untyped]) }
+            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+./sorbet/rbi/sorbet-typed/lib/activesupport/all/activesupport.rbi:1624: Malformed `sig`. Type not specified for argument `block` https://srb.help/5003
+    1624 |  def many?(&block); end
+                       ^^^^^
+    ./sorbet/rbi/sorbet-typed/lib/activesupport/all/activesupport.rbi:1623: Signature
+    1623 |  sig { returns(T::Boolean) }
+            ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+./sorbet/rbi/sorbet-typed/lib/activesupport/all/activesupport.rbi:1847: Malformed type declaration. Generic class without type arguments `Class` https://srb.help/5046
+    1847 |  sig { params(klasses: Class, with: T.nilable(Symbol), block: T.nilable(T.proc.params(error: T.untyped).void)).void }
+                                  ^^^^^
+  Autocorrect: Use `-a` to autocorrect
+    ./sorbet/rbi/sorbet-typed/lib/activesupport/all/activesupport.rbi:1847: Replace with `T::Class[T.anything]`
+    1847 |  sig { params(klasses: Class, with: T.nilable(Symbol), block: T.nilable(T.proc.params(error: T.untyped).void)).void }
+                                  ^^^^^
+
+./sorbet/rbi/gems/psych.rbi:422: Parent of class `Psych::Parser::Mark` redefined from `Object` to `Anonymous_Struct_4` https://srb.help/5012
+     422 |class Psych::Parser::Mark < Anonymous_Struct_4
+                                      ^^^^^^^^^^^^^^^^^^
+  Note:
+    Pass `--suppress-payload-superclass-redefinition-for=Psych::Parser::Mark` at the command line or in the `sorbet/config` file to silence this error.
+    Only use this to work around Ruby or gem upgrade incompatibilities.
+
+./sorbet/rbi/gems/erb.rbi:19: Method `ERB#initialize` redefined without matching argument count. Expected: `4`, got: `6` https://srb.help/4010
+    19 |  def initialize(str, safe_level = nil, legacy_trim_mode = nil, legacy_eoutvar = nil, trim_mode: nil, eoutvar: nil); end
+          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    https://github.com/sorbet/sorbet/tree/d8bc4cf8c32907c73fc4e37bad875ffaff7658c6/rbi/stdlib/erb.rbi#L346: Previous definition
+     346 |  def initialize(str, safe_level=T.unsafe(nil), trim_mode=T.unsafe(nil), eoutvar=T.unsafe(nil)); end
+            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+./sorbet/rbi/sorbet-typed/lib/activerecord/all/model_schema.rbi:64: Unable to resolve constant `Column` https://srb.help/5002
+    64 |  sig { returns(T::Hash[String, ActiveRecord::ConnectionAdapters::Column]) }
+                                        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+./sorbet/rbi/sorbet-typed/lib/activerecord/all/model_schema.rbi:68: Unable to resolve constant `Column` https://srb.help/5002
+    68 |  sig { returns(T::Array[ActiveRecord::ConnectionAdapters::Column]) }
+                                 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+./sorbet/rbi/sorbet-typed/lib/activerecord/all/model_schema.rbi:76: Unable to resolve constant `Column` https://srb.help/5002
+    76 |  sig { returns(T::Array[ActiveRecord::ConnectionAdapters::Column]) }
+                                 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+./sorbet/rbi/sorbet-typed/lib/activestorage/all/activestorage.rbi:63: Method `ActiveStorage::Attached::One#detach` redefined without matching argument count. Expected: `2`, got: `0` https://srb.help/4010
+    63 |  def detach; end
+          ^^^^^^^^^^
+    ./sorbet/rbi/gems/activestorage.rbi:333: Previous definition
+     333 |  def detach(*, **, &); end
+            ^^^^^^^^^^^^^^^^^^^^
+
+./sorbet/rbi/sorbet-typed/lib/activestorage/all/activestorage.rbi:68: Method `ActiveStorage::Attached::One#purge` redefined without matching argument count. Expected: `2`, got: `0` https://srb.help/4010
+    68 |  def purge; end
+          ^^^^^^^^^
+    ./sorbet/rbi/gems/activestorage.rbi:336: Previous definition
+     336 |  def purge(*, **, &); end
+            ^^^^^^^^^^^^^^^^^^^
+
+./sorbet/rbi/sorbet-typed/lib/activestorage/all/activestorage.rbi:72: Method `ActiveStorage::Attached::One#purge_later` redefined without matching argument count. Expected: `2`, got: `0` https://srb.help/4010
+    72 |  def purge_later; end
+          ^^^^^^^^^^^^^^^
+    ./sorbet/rbi/gems/activestorage.rbi:337: Previous definition
+     337 |  def purge_later(*, **, &); end
+            ^^^^^^^^^^^^^^^^^^^^^^^^^
+
+./sorbet/rbi/sorbet-typed/lib/activestorage/all/activestorage.rbi:119: Method `ActiveStorage::Attached::Many#detach` redefined without matching argument count. Expected: `2`, got: `0` https://srb.help/4010
+     119 |  def detach; end
+            ^^^^^^^^^^
+    ./sorbet/rbi/gems/activestorage.rbi:346: Previous definition
+     346 |  def detach(*, **, &); end
+            ^^^^^^^^^^^^^^^^^^^^
+
+./sorbet/rbi/sorbet-typed/lib/activestorage/all/activestorage.rbi:124: Method `ActiveStorage::Attached::Many#purge` redefined without matching argument count. Expected: `2`, got: `0` https://srb.help/4010
+     124 |  def purge; end
+            ^^^^^^^^^
+    ./sorbet/rbi/gems/activestorage.rbi:349: Previous definition
+     349 |  def purge(*, **, &); end
+            ^^^^^^^^^^^^^^^^^^^
+
+./sorbet/rbi/sorbet-typed/lib/activestorage/all/activestorage.rbi:128: Method `ActiveStorage::Attached::Many#purge_later` redefined without matching argument count. Expected: `2`, got: `0` https://srb.help/4010
+     128 |  def purge_later; end
+            ^^^^^^^^^^^^^^^
+    ./sorbet/rbi/gems/activestorage.rbi:350: Previous definition
+     350 |  def purge_later(*, **, &); end
+            ^^^^^^^^^^^^^^^^^^^^^^^^^
+
+./sorbet/rbi/sorbet-typed/lib/activestorage/all/activestorage.rbi:23: Unable to resolve constant `Analyzable` https://srb.help/5002
+    23 |  include ActiveStorage::Blob::Analyzable
+                  ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+./sorbet/rbi/sorbet-typed/lib/activestorage/all/activestorage.rbi:23: Unable to resolve constant `Analyzable` https://srb.help/5002
+    23 |  include ActiveStorage::Blob::Analyzable
+                  ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+./sorbet/rbi/sorbet-typed/lib/activestorage/all/activestorage.rbi:24: Unable to resolve constant `Identifiable` https://srb.help/5002
+    24 |  include ActiveStorage::Blob::Identifiable
+                  ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+./sorbet/rbi/sorbet-typed/lib/activestorage/all/activestorage.rbi:24: Unable to resolve constant `Identifiable` https://srb.help/5002
+    24 |  include ActiveStorage::Blob::Identifiable
+                  ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+./sorbet/rbi/sorbet-typed/lib/activestorage/all/activestorage.rbi:80: Unable to resolve constant `Analyzable` https://srb.help/5002
+    80 |  include ActiveStorage::Blob::Analyzable
+                  ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+./sorbet/rbi/sorbet-typed/lib/activestorage/all/activestorage.rbi:80: Unable to resolve constant `Analyzable` https://srb.help/5002
+    80 |  include ActiveStorage::Blob::Analyzable
+                  ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+./sorbet/rbi/sorbet-typed/lib/activestorage/all/activestorage.rbi:81: Unable to resolve constant `Identifiable` https://srb.help/5002
+    81 |  include ActiveStorage::Blob::Identifiable
+                  ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+./sorbet/rbi/sorbet-typed/lib/activestorage/all/activestorage.rbi:81: Unable to resolve constant `Identifiable` https://srb.help/5002
+    81 |  include ActiveStorage::Blob::Identifiable
+                  ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+./sorbet/rbi/sorbet-typed/lib/activestorage/all/activestorage.rbi:154: Unable to resolve constant `Variant` https://srb.help/5002
+     154 |  sig { params(transformations: T.untyped).returns(ActiveStorage::Variant) }
+                                                             ^^^^^^^^^^^^^^^^^^^^^^
+
 ./sorbet/rbi/gems/net-smtp.rbi:50: Method `Net::SMTP#initialize` redefined without matching argument count. Expected: `2`, got: `7` https://srb.help/4010
     50 |  def initialize(address, port = nil, tls: nil, starttls: nil, tls_verify: nil, tls_hostname: nil, ssl_context_params: nil); end
           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
@@ -525,6 +538,351 @@
     https://github.com/sorbet/sorbet/tree/d8bc4cf8c32907c73fc4e37bad875ffaff7658c6/rbi/stdlib/net.rbi#L6626: Previous definition
     6626 |  def start(helo=T.unsafe(nil), user=T.unsafe(nil), secret=T.unsafe(nil), authtype=T.unsafe(nil)); end
             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+./sorbet/rbi/sorbet-typed/lib/actionmailer/all/actionmailer.rbi:12: Malformed `sig`. Type not specified for argument `block` https://srb.help/5003
+    12 |  def mail(headers = nil, &block); end
+                                   ^^^^^
+    ./sorbet/rbi/sorbet-typed/lib/actionmailer/all/actionmailer.rbi:11: Signature
+    11 |  sig { params(headers: T.untyped).returns(Mail::Message) }
+          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+./sorbet/rbi/sorbet-typed/lib/activerecord/all/activerecord.rbi:1008: Parent of class `ActiveRecord::ConnectionNotEstablished` redefined from `ActiveRecord::AdapterError` to `ActiveRecord::ActiveRecordError` https://srb.help/5012
+    1008 |  class ConnectionNotEstablished < ActiveRecordError; end
+                                             ^^^^^^^^^^^^^^^^^
+
+./sorbet/rbi/sorbet-typed/lib/activerecord/all/activerecord.rbi:1063: Parent of class `ActiveRecord::StatementInvalid` redefined from `ActiveRecord::AdapterError` to `ActiveRecord::ActiveRecordError` https://srb.help/5012
+    1063 |  class StatementInvalid < ActiveRecordError; end
+                                     ^^^^^^^^^^^^^^^^^
+
+./sorbet/rbi/sorbet-typed/lib/activerecord/all/activerecord.rbi:365: Unable to resolve constant `ConnectionHandling` https://srb.help/5002
+     365 |  extend ActiveRecord::ConnectionHandling
+                   ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  Did you mean `ActiveRecord::ConnectionFailed`? Use `-a` to autocorrect
+    ./sorbet/rbi/sorbet-typed/lib/activerecord/all/activerecord.rbi:365: Replace with `ActiveRecord::ConnectionFailed`
+     365 |  extend ActiveRecord::ConnectionHandling
+                   ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    ./sorbet/rbi/gems/activerecord.rbi:1496: `ActiveRecord::ConnectionFailed` defined here
+    1496 |class ActiveRecord::ConnectionFailed < ActiveRecord::QueryAborted
+          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+./sorbet/rbi/sorbet-typed/lib/activerecord/all/activerecord.rbi:365: Unable to resolve constant `ConnectionHandling` https://srb.help/5002
+     365 |  extend ActiveRecord::ConnectionHandling
+                   ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  Did you mean `ActiveRecord::ConnectionFailed`? Use `-a` to autocorrect
+    ./sorbet/rbi/sorbet-typed/lib/activerecord/all/activerecord.rbi:365: Replace with `ActiveRecord::ConnectionFailed`
+     365 |  extend ActiveRecord::ConnectionHandling
+                   ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    ./sorbet/rbi/gems/activerecord.rbi:1496: `ActiveRecord::ConnectionFailed` defined here
+    1496 |class ActiveRecord::ConnectionFailed < ActiveRecord::QueryAborted
+          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+./sorbet/rbi/sorbet-typed/lib/activerecord/all/activerecord.rbi:371: Unable to resolve constant `Enum` https://srb.help/5002
+     371 |  extend ActiveRecord::Enum
+                   ^^^^^^^^^^^^^^^^^^
+  Did you mean `Fixnum`? Use `-a` to autocorrect
+    ./sorbet/rbi/sorbet-typed/lib/activerecord/all/activerecord.rbi:371: Replace with `Fixnum`
+     371 |  extend ActiveRecord::Enum
+                   ^^^^^^^^^^^^^^^^^^
+    https://github.com/sorbet/sorbet/tree/d8bc4cf8c32907c73fc4e37bad875ffaff7658c6/rbi/core/fixnum.rbi#L5: `Fixnum` defined here
+     5 |Fixnum = Integer
+        ^^^^^^
+  Did you mean `ENV`? Use `-a` to autocorrect
+    ./sorbet/rbi/sorbet-typed/lib/activerecord/all/activerecord.rbi:371: Replace with `ENV`
+     371 |  extend ActiveRecord::Enum
+                   ^^^^^^^^^^^^^^^^^^
+    https://github.com/sorbet/sorbet/tree/d8bc4cf8c32907c73fc4e37bad875ffaff7658c6/rbi/sorbet/sorbet.rbi#L387: `ENV` defined here
+     387 |::ENV = T.let(T.unsafe(nil), Sorbet::Private::Static::ENVClass)
+          ^^^^^
+  Did you mean `ERB`? Use `-a` to autocorrect
+    ./sorbet/rbi/sorbet-typed/lib/activerecord/all/activerecord.rbi:371: Replace with `ERB`
+     371 |  extend ActiveRecord::Enum
+                   ^^^^^^^^^^^^^^^^^^
+    https://github.com/sorbet/sorbet/tree/d8bc4cf8c32907c73fc4e37bad875ffaff7658c6/rbi/stdlib/erb.rbi#L269: `ERB` defined here
+     269 |class ERB
+          ^^^^^^^^^
+
+./sorbet/rbi/sorbet-typed/lib/activerecord/all/activerecord.rbi:371: Unable to resolve constant `Enum` https://srb.help/5002
+     371 |  extend ActiveRecord::Enum
+                   ^^^^^^^^^^^^^^^^^^
+  Did you mean `Fixnum`? Use `-a` to autocorrect
+    ./sorbet/rbi/sorbet-typed/lib/activerecord/all/activerecord.rbi:371: Replace with `Fixnum`
+     371 |  extend ActiveRecord::Enum
+                   ^^^^^^^^^^^^^^^^^^
+    https://github.com/sorbet/sorbet/tree/d8bc4cf8c32907c73fc4e37bad875ffaff7658c6/rbi/core/fixnum.rbi#L5: `Fixnum` defined here
+     5 |Fixnum = Integer
+        ^^^^^^
+  Did you mean `ENV`? Use `-a` to autocorrect
+    ./sorbet/rbi/sorbet-typed/lib/activerecord/all/activerecord.rbi:371: Replace with `ENV`
+     371 |  extend ActiveRecord::Enum
+                   ^^^^^^^^^^^^^^^^^^
+    https://github.com/sorbet/sorbet/tree/d8bc4cf8c32907c73fc4e37bad875ffaff7658c6/rbi/sorbet/sorbet.rbi#L387: `ENV` defined here
+     387 |::ENV = T.let(T.unsafe(nil), Sorbet::Private::Static::ENVClass)
+          ^^^^^
+  Did you mean `ERB`? Use `-a` to autocorrect
+    ./sorbet/rbi/sorbet-typed/lib/activerecord/all/activerecord.rbi:371: Replace with `ERB`
+     371 |  extend ActiveRecord::Enum
+                   ^^^^^^^^^^^^^^^^^^
+    https://github.com/sorbet/sorbet/tree/d8bc4cf8c32907c73fc4e37bad875ffaff7658c6/rbi/stdlib/erb.rbi#L269: `ERB` defined here
+     269 |class ERB
+          ^^^^^^^^^
+
+./sorbet/rbi/sorbet-typed/lib/activerecord/all/activerecord.rbi:382: Unable to resolve constant `Default` https://srb.help/5002
+     382 |  include ActiveRecord::Scoping::Default # via ActiveRecord::Scoping#included hook
+                    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  Did you mean `ActiveRecord::Result`? Use `-a` to autocorrect
+    ./sorbet/rbi/sorbet-typed/lib/activerecord/all/activerecord.rbi:382: Replace with `ActiveRecord::Result`
+     382 |  include ActiveRecord::Scoping::Default # via ActiveRecord::Scoping#included hook
+                    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    ./sorbet/rbi/sorbet-typed/lib/activerecord/all/activerecord.rbi:981: `ActiveRecord::Result` defined here
+     981 |class ActiveRecord::Result
+          ^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+./sorbet/rbi/sorbet-typed/lib/activerecord/all/activerecord.rbi:382: Unable to resolve constant `Default` https://srb.help/5002
+     382 |  include ActiveRecord::Scoping::Default # via ActiveRecord::Scoping#included hook
+                    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  Did you mean `ActiveRecord::Result`? Use `-a` to autocorrect
+    ./sorbet/rbi/sorbet-typed/lib/activerecord/all/activerecord.rbi:382: Replace with `ActiveRecord::Result`
+     382 |  include ActiveRecord::Scoping::Default # via ActiveRecord::Scoping#included hook
+                    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    ./sorbet/rbi/sorbet-typed/lib/activerecord/all/activerecord.rbi:981: `ActiveRecord::Result` defined here
+     981 |class ActiveRecord::Result
+          ^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+./sorbet/rbi/sorbet-typed/lib/activerecord/all/activerecord.rbi:398: Unable to resolve constant `BeforeTypeCast` https://srb.help/5002
+     398 |  include ActiveRecord::AttributeMethods::BeforeTypeCast # via ActiveRecord::AttributeMethods#included hook
+                    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+./sorbet/rbi/sorbet-typed/lib/activerecord/all/activerecord.rbi:398: Unable to resolve constant `BeforeTypeCast` https://srb.help/5002
+     398 |  include ActiveRecord::AttributeMethods::BeforeTypeCast # via ActiveRecord::AttributeMethods#included hook
+                    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+./sorbet/rbi/sorbet-typed/lib/activerecord/all/activerecord.rbi:399: Unable to resolve constant `Query` https://srb.help/5002
+     399 |  include ActiveRecord::AttributeMethods::Query # via ActiveRecord::AttributeMethods#included hook
+                    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+./sorbet/rbi/sorbet-typed/lib/activerecord/all/activerecord.rbi:399: Unable to resolve constant `Query` https://srb.help/5002
+     399 |  include ActiveRecord::AttributeMethods::Query # via ActiveRecord::AttributeMethods#included hook
+                    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+./sorbet/rbi/sorbet-typed/lib/activerecord/all/activerecord.rbi:1120: Unable to resolve constant `ColumnDefinition` https://srb.help/5002
+    1120 |  sig { returns(T::Array[ActiveRecord::ConnectionAdapters::ColumnDefinition]) }
+                                   ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+./sorbet/rbi/sorbet-typed/lib/activerecord/all/activerecord.rbi:1124: Unable to resolve constant `ColumnDefinition` https://srb.help/5002
+    1124 |  sig { params(name: T.any(String, Symbol)).returns(ActiveRecord::ConnectionAdapters::ColumnDefinition) }
+                                                              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+./sorbet/rbi/sorbet-typed/lib/activerecord/all/activerecord.rbi:693: Malformed type declaration. Generic class without type arguments `Class` https://srb.help/5046
+     693 |  sig { params(klass: Class).returns(T.untyped) }
+                                ^^^^^
+  Autocorrect: Use `-a` to autocorrect
+    ./sorbet/rbi/sorbet-typed/lib/activerecord/all/activerecord.rbi:693: Replace with `T::Class[T.anything]`
+     693 |  sig { params(klass: Class).returns(T.untyped) }
+                                ^^^^^
+
+./sorbet/rbi/sorbet-typed/lib/activerecord/all/activerecord.rbi:696: Malformed type declaration. Generic class without type arguments `Class` https://srb.help/5046
+     696 |  sig { params(klass: Class).returns(T.untyped) }
+                                ^^^^^
+  Autocorrect: Use `-a` to autocorrect
+    ./sorbet/rbi/sorbet-typed/lib/activerecord/all/activerecord.rbi:696: Replace with `T::Class[T.anything]`
+     696 |  sig { params(klass: Class).returns(T.untyped) }
+                                ^^^^^
+
+./sorbet/rbi/gems/drb.rbi:58: Method `DRb::DRbObject#method_missing` redefined without matching argument count. Expected: `2`, got: `3` https://srb.help/4010
+    58 |  def method_missing(msg_id, *a, **, &b); end
+          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    https://github.com/sorbet/sorbet/tree/d8bc4cf8c32907c73fc4e37bad875ffaff7658c6/rbi/stdlib/drb.rbi#L614: Previous definition
+     614 |  def method_missing(msg_id, *a, &b); end
+            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+./sorbet/rbi/sorbet-typed/lib/railties/all/railties.rbi:18: Unable to resolve constant `Store` https://srb.help/5002
+    18 |    sig { returns(ActiveSupport::Cache::Store) }
+                          ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+./sorbet/rbi/sorbet-typed/lib/railties/all/railties.rbi:21: Unable to resolve constant `StringInquirer` https://srb.help/5002
+    21 |    sig { returns(ActiveSupport::StringInquirer) }
+                          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+./sorbet/rbi/sorbet-typed/lib/railties/all/railties.rbi:36: Unable to resolve constant `Configuration` https://srb.help/5002
+    36 |  sig { returns(Rails::Application::Configuration) }
+                        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+./sorbet/rbi/sorbet-typed/lib/railties/all/railties.rbi:110: Unable to resolve constant `SourceAnnotationExtractor` https://srb.help/5002
+     110 |SourceAnnotationExtractor = Rails::SourceAnnotationExtractor
+                                      ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+./sorbet/rbi/sorbet-typed/lib/railties/all/railties.rbi:58: Malformed `sig`. Type not specified for argument `block` https://srb.help/5003
+    58 |  def routes(&block); end
+                      ^^^^^
+    ./sorbet/rbi/sorbet-typed/lib/railties/all/railties.rbi:57: Signature
+    57 |  sig { returns(ActionDispatch::Routing::RouteSet) }
+          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+./sorbet/rbi/sorbet-typed/lib/minitest/all/minitest.rbi:70: Malformed `sig`. Type not specified for argument `block` https://srb.help/5003
+    70 |  def assert_raises(*exp, &block); end
+                                   ^^^^^
+    ./sorbet/rbi/sorbet-typed/lib/minitest/all/minitest.rbi:65: Signature
+    65 |  sig do
+    66 |    params(
+    67 |      exp: T.untyped
+    68 |    ).returns(StandardError)
+    69 |  end
+
+./sorbet/rbi/sorbet-typed/lib/railties/>=6.1/railties.rbi:12: Unable to resolve constant `EnvironmentInquirer` https://srb.help/5002
+    12 |    sig { returns(ActiveSupport::EnvironmentInquirer) }
+                          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+./sorbet/rbi/gems/actionpack.rbi:1311: Malformed `sig`. Type not specified for argument `block` https://srb.help/5003
+    1311 |  def merge!(other_hash, &block); end
+                                    ^^^^^
+    ./sorbet/rbi/sorbet-typed/lib/actionpack/all/actionpack.rbi:580: Signature
+     580 |  sig { params(other_hash: T.untyped).returns(ActionController::Parameters) }
+            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+./sorbet/rbi/gems/actionpack.rbi:1351: Malformed `sig`. Type not specified for argument `block` https://srb.help/5003
+    1351 |  def to_h(&block); end
+                      ^^^^^
+    ./sorbet/rbi/sorbet-typed/lib/actionpack/all/actionpack.rbi:712: Signature
+     712 |  sig { returns(ActiveSupport::HashWithIndifferentAccess) }
+            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+./sorbet/rbi/sorbet-typed/lib/activemodel/all/activemodel.rbi:104: Method `ActiveModel::Validations::ClassMethods#validate` redefined without matching argument count. Expected: `1`, got: `5` https://srb.help/4010
+     104 |  def validate(
+     105 |    *names,
+     106 |    if: nil,
+     107 |    on: nil,
+     108 |    prepend: false,
+     109 |    unless: nil
+     110 |  ); end
+    ./sorbet/rbi/gems/activemodel.rbi:484: Previous definition
+     484 |  def validate(*args, &block); end
+            ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+./sorbet/rbi/sorbet-typed/lib/activemodel/all/activemodel.rbi:147: Method `ActiveModel::Validations::ClassMethods#validates` redefined without matching argument count. Expected: `1`, got: `19` https://srb.help/4010
+     147 |  def validates(
+     148 |    *names,
+     149 |    absence: false,
+     150 |    acceptance: {},
+     151 |    allow_blank: false,
+         |...
+     163 |    strict: false,
+     164 |    uniqueness: false,
+     165 |    unless: :_,
+     166 |    **kwargs
+     167 |  )
+    ./sorbet/rbi/gems/activemodel.rbi:486: Previous definition
+     486 |  def validates(*attributes); end
+            ^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+./sorbet/rbi/sorbet-typed/lib/activemodel/all/activemodel.rbi:576: Method `ActiveModel::Errors#each` redefined without matching argument count. Expected: `2`, got: `0` https://srb.help/4010
+     576 |  def each(&blk); end
+            ^^^^^^^^^^^^^^
+    ./sorbet/rbi/gems/activemodel.rbi:217: Previous definition
+     217 |  def each(*args, **, &block); end
+            ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+./sorbet/rbi/sorbet-typed/lib/activemodel/all/activemodel.rbi:636: Method `ActiveModel::Errors#add` redefined with argument `options` as a non-keyword argument https://srb.help/4010
+     636 |  def add(attribute, message = :invalid, options = {}); end
+            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    ./sorbet/rbi/gems/activemodel.rbi:209: The corresponding argument `options` in the previous definition was a keyword argument
+     209 |  def add(attribute, type = nil, **options); end
+            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+./sorbet/rbi/sorbet-typed/lib/activemodel/all/activemodel.rbi:707: Method `ActiveModel::Errors#empty?` redefined without matching argument count. Expected: `2`, got: `1` https://srb.help/4010
+     707 |  def empty?(*args, &block); end
+            ^^^^^^^^^^^^^^^^^^^^^^^^^
+    ./sorbet/rbi/gems/activemodel.rbi:218: Previous definition
+     218 |  def empty?(*args, **, &block); end
+            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+./sorbet/rbi/gems/logger.rbi:34: Method `Logger#initialize` redefined without matching argument count. Expected: `9`, got: `11` https://srb.help/4010
+    34 |  def initialize(logdev, shift_age = nil, shift_size = nil, level: nil, progname: nil, formatter: nil, datetime_format: nil, binmode: nil, shift_period_suffix: nil, reraise_write_errors: nil, skip_header: nil); end
+          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    https://github.com/sorbet/sorbet/tree/d8bc4cf8c32907c73fc4e37bad875ffaff7658c6/rbi/stdlib/logger.rbi#L434: Previous definition
+     434 |  def initialize(
+     435 |    logdev, shift_age = 0, shift_size = 1048576, level: DEBUG,
+     436 |    progname: nil, formatter: nil, datetime_format: nil,
+     437 |    shift_period_suffix: '%Y%m%d', binmode: false
+     438 |  )
+
+./sorbet/rbi/gems/logger.rbi:42: Method `Logger#reopen` redefined without matching argument count. Expected: `1`, got: `5` https://srb.help/4010
+    42 |  def reopen(logdev = nil, shift_age = nil, shift_size = nil, shift_period_suffix: nil, binmode: nil); end
+          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    https://github.com/sorbet/sorbet/tree/d8bc4cf8c32907c73fc4e37bad875ffaff7658c6/rbi/stdlib/logger.rbi#L460: Previous definition
+     460 |  def reopen(logdev = nil); end
+            ^^^^^^^^^^^^^^^^^^^^^^^^
+
+./sorbet/rbi/gems/logger.rbi:75: Method `Logger::LogDevice#initialize` redefined without matching argument count. Expected: `5`, got: `7` https://srb.help/4010
+    75 |  def initialize(log = nil, shift_age: nil, shift_size: nil, shift_period_suffix: nil, binmode: nil, reraise_write_errors: nil, skip_header: nil); end
+          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    https://github.com/sorbet/sorbet/tree/d8bc4cf8c32907c73fc4e37bad875ffaff7658c6/rbi/stdlib/logger.rbi#L667: Previous definition
+     667 |  def initialize(log = nil, shift_age: nil, shift_size: nil, shift_period_suffix: nil, binmode: false); end
+            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+./sorbet/rbi/gems/logger.rbi:78: Method `Logger::LogDevice#reopen` redefined without matching argument count. Expected: `1`, got: `5` https://srb.help/4010
+    78 |  def reopen(log = nil, shift_age: nil, shift_size: nil, shift_period_suffix: nil, binmode: nil); end
+          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    https://github.com/sorbet/sorbet/tree/d8bc4cf8c32907c73fc4e37bad875ffaff7658c6/rbi/stdlib/logger.rbi#L670: Previous definition
+     670 |  def reopen(log = nil); end
+            ^^^^^^^^^^^^^^^^^^^^^
+
+./sorbet/rbi/sorbet-typed/lib/activerecord/>=5.2/activerecord.rbi:11: Unable to resolve constant `DelegateCache` https://srb.help/5002
+    11 |  extend ActiveRecord::Delegation::DelegateCache
+                 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  Did you mean `Delegator`? Use `-a` to autocorrect
+    ./sorbet/rbi/sorbet-typed/lib/activerecord/>=5.2/activerecord.rbi:11: Replace with `Delegator`
+    11 |  extend ActiveRecord::Delegation::DelegateCache
+                 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    https://github.com/sorbet/sorbet/tree/d8bc4cf8c32907c73fc4e37bad875ffaff7658c6/rbi/stdlib/delegator.rbi#L40: `Delegator` defined here
+    40 |class Delegator < BasicObject
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  Did you mean `ActiveRecord::Delegation`? Use `-a` to autocorrect
+    ./sorbet/rbi/sorbet-typed/lib/activerecord/>=5.2/activerecord.rbi:11: Replace with `ActiveRecord::Delegation`
+    11 |  extend ActiveRecord::Delegation::DelegateCache
+                 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    ./sorbet/rbi/sorbet-typed/lib/activerecord/all/activerecord.rbi:293: `ActiveRecord::Delegation` defined here
+     293 |module ActiveRecord::Delegation
+          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+./sorbet/rbi/sorbet-typed/lib/activerecord/>=5.2/activerecord.rbi:11: Unable to resolve constant `DelegateCache` https://srb.help/5002
+    11 |  extend ActiveRecord::Delegation::DelegateCache
+                 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  Did you mean `Delegator`? Use `-a` to autocorrect
+    ./sorbet/rbi/sorbet-typed/lib/activerecord/>=5.2/activerecord.rbi:11: Replace with `Delegator`
+    11 |  extend ActiveRecord::Delegation::DelegateCache
+                 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    https://github.com/sorbet/sorbet/tree/d8bc4cf8c32907c73fc4e37bad875ffaff7658c6/rbi/stdlib/delegator.rbi#L40: `Delegator` defined here
+    40 |class Delegator < BasicObject
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  Did you mean `ActiveRecord::Delegation`? Use `-a` to autocorrect
+    ./sorbet/rbi/sorbet-typed/lib/activerecord/>=5.2/activerecord.rbi:11: Replace with `ActiveRecord::Delegation`
+    11 |  extend ActiveRecord::Delegation::DelegateCache
+                 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    ./sorbet/rbi/sorbet-typed/lib/activerecord/all/activerecord.rbi:293: `ActiveRecord::Delegation` defined here
+     293 |module ActiveRecord::Delegation
+          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+./sorbet/rbi/gems/activesupport.rbi:1052: Method `Exception#as_json` redefined with argument `options` as a non-splat argument https://srb.help/4010
+    1052 |  def as_json(options = nil); end
+            ^^^^^^^^^^^^^^^^^^^^^^^^^^
+    https://github.com/sorbet/sorbet/tree/d8bc4cf8c32907c73fc4e37bad875ffaff7658c6/rbi/stdlib/json.rbi#L1097: The corresponding argument `_arg0` in the previous definition was a splat argument
+    1097 |  def as_json(*_arg0); end
+            ^^^^^^^^^^^^^^^^^^^
+
+./sorbet/rbi/gems/activesupport.rbi:2418: Unable to resolve constant `Anonymous_Delegator_1` https://srb.help/5002
+    2418 |class ActiveSupport::SyntaxErrorProxy < Anonymous_Delegator_1
+                                                  ^^^^^^^^^^^^^^^^^^^^^
+
+./sorbet/rbi/gems/activesupport.rbi:2440: Unable to resolve constant `Anonymous_Delegator_3` https://srb.help/5002
+    2440 |class ActiveSupport::SyntaxErrorProxy::BacktraceLocationProxy < Anonymous_Delegator_3
+                                                                          ^^^^^^^^^^^^^^^^^^^^^
+
+./sorbet/rbi/gems/activesupport.rbi:1826: Malformed `sig`. Type not specified for argument `&` https://srb.help/5003
+    1826 |  def to_f(&); end
+                     ^
+    ./sorbet/rbi/sorbet-typed/lib/activesupport/all/activesupport.rbi:1657: Signature
+    1657 |  sig { returns(Float) }
+            ^^^^^^^^^^^^^^^^^^^^^^
 
 ./sorbet/rbi/sorbet-typed/lib/activestorage/>=6.1.0.rc1/activestorage.rbi:55: Method `ActiveStorage::Attached::Model::ClassMethods#has_one_attached` redefined without matching argument count. Expected: `4`, got: `3` https://srb.help/4010
     55 |  def has_one_attached(name, dependent: :purge_later, service: nil); end
@@ -706,12 +1064,9 @@
      651 |  def self.strptime(str="-4712-01-01T00:00:00+00:00", fmt="%FT%T%z", sg=Date::ITALY); end
             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-./sorbet/rbi/gems/erb.rbi:19: Method `ERB#initialize` redefined without matching argument count. Expected: `4`, got: `6` https://srb.help/4010
-    19 |  def initialize(str, safe_level = nil, legacy_trim_mode = nil, legacy_eoutvar = nil, trim_mode: nil, eoutvar: nil); end
-          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-    https://github.com/sorbet/sorbet/tree/d8bc4cf8c32907c73fc4e37bad875ffaff7658c6/rbi/stdlib/erb.rbi#L346: Previous definition
-     346 |  def initialize(str, safe_level=T.unsafe(nil), trim_mode=T.unsafe(nil), eoutvar=T.unsafe(nil)); end
-            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+./sorbet/rbi/gems/mail.rbi:493: Unable to resolve constant `Anonymous_Delegator_7` https://srb.help/5002
+     493 |class Mail::PartsList < Anonymous_Delegator_7
+                                  ^^^^^^^^^^^^^^^^^^^^^
 
 ./sorbet/rbi/gems/net-protocol.rbi:47: Method `Net::BufferedIO#<<` redefined with argument `strs` as a splat argument https://srb.help/4010
     47 |  def <<(*strs); end
@@ -747,361 +1102,6 @@
     https://github.com/sorbet/sorbet/tree/d8bc4cf8c32907c73fc4e37bad875ffaff7658c6/rbi/stdlib/net.rbi#L6820: Previous definition
     6820 |  def initialize(socket, method); end
             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-
-./sorbet/rbi/sorbet-typed/lib/minitest/all/minitest.rbi:70: Malformed `sig`. Type not specified for argument `block` https://srb.help/5003
-    70 |  def assert_raises(*exp, &block); end
-                                   ^^^^^
-    ./sorbet/rbi/sorbet-typed/lib/minitest/all/minitest.rbi:65: Signature
-    65 |  sig do
-    66 |    params(
-    67 |      exp: T.untyped
-    68 |    ).returns(StandardError)
-    69 |  end
-
-./sorbet/rbi/gems/activesupport.rbi:1052: Method `Exception#as_json` redefined with argument `options` as a non-splat argument https://srb.help/4010
-    1052 |  def as_json(options = nil); end
-            ^^^^^^^^^^^^^^^^^^^^^^^^^^
-    https://github.com/sorbet/sorbet/tree/d8bc4cf8c32907c73fc4e37bad875ffaff7658c6/rbi/stdlib/json.rbi#L1097: The corresponding argument `_arg0` in the previous definition was a splat argument
-    1097 |  def as_json(*_arg0); end
-            ^^^^^^^^^^^^^^^^^^^
-
-./sorbet/rbi/gems/activesupport.rbi:2418: Unable to resolve constant `Anonymous_Delegator_1` https://srb.help/5002
-    2418 |class ActiveSupport::SyntaxErrorProxy < Anonymous_Delegator_1
-                                                  ^^^^^^^^^^^^^^^^^^^^^
-
-./sorbet/rbi/gems/activesupport.rbi:2440: Unable to resolve constant `Anonymous_Delegator_3` https://srb.help/5002
-    2440 |class ActiveSupport::SyntaxErrorProxy::BacktraceLocationProxy < Anonymous_Delegator_3
-                                                                          ^^^^^^^^^^^^^^^^^^^^^
-
-./sorbet/rbi/gems/activesupport.rbi:1826: Malformed `sig`. Type not specified for argument `&` https://srb.help/5003
-    1826 |  def to_f(&); end
-                     ^
-    ./sorbet/rbi/sorbet-typed/lib/activesupport/all/activesupport.rbi:1657: Signature
-    1657 |  sig { returns(Float) }
-            ^^^^^^^^^^^^^^^^^^^^^^
-
-./sorbet/rbi/sorbet-typed/lib/activerecord/all/model_schema.rbi:64: Unable to resolve constant `Column` https://srb.help/5002
-    64 |  sig { returns(T::Hash[String, ActiveRecord::ConnectionAdapters::Column]) }
-                                        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-
-./sorbet/rbi/sorbet-typed/lib/activerecord/all/model_schema.rbi:68: Unable to resolve constant `Column` https://srb.help/5002
-    68 |  sig { returns(T::Array[ActiveRecord::ConnectionAdapters::Column]) }
-                                 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-
-./sorbet/rbi/sorbet-typed/lib/activerecord/all/model_schema.rbi:76: Unable to resolve constant `Column` https://srb.help/5002
-    76 |  sig { returns(T::Array[ActiveRecord::ConnectionAdapters::Column]) }
-                                 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-
-./sorbet/rbi/gems/drb.rbi:58: Method `DRb::DRbObject#method_missing` redefined without matching argument count. Expected: `2`, got: `3` https://srb.help/4010
-    58 |  def method_missing(msg_id, *a, **, &b); end
-          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-    https://github.com/sorbet/sorbet/tree/d8bc4cf8c32907c73fc4e37bad875ffaff7658c6/rbi/stdlib/drb.rbi#L614: Previous definition
-     614 |  def method_missing(msg_id, *a, &b); end
-            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-
-./sorbet/rbi/sorbet-typed/lib/railties/>=6.1/railties.rbi:12: Unable to resolve constant `EnvironmentInquirer` https://srb.help/5002
-    12 |    sig { returns(ActiveSupport::EnvironmentInquirer) }
-                          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-
-./sorbet/rbi/sorbet-typed/lib/actionmailer/all/actionmailer.rbi:12: Malformed `sig`. Type not specified for argument `block` https://srb.help/5003
-    12 |  def mail(headers = nil, &block); end
-                                   ^^^^^
-    ./sorbet/rbi/sorbet-typed/lib/actionmailer/all/actionmailer.rbi:11: Signature
-    11 |  sig { params(headers: T.untyped).returns(Mail::Message) }
-          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-
-./sorbet/rbi/sorbet-typed/lib/railties/all/railties.rbi:18: Unable to resolve constant `Store` https://srb.help/5002
-    18 |    sig { returns(ActiveSupport::Cache::Store) }
-                          ^^^^^^^^^^^^^^^^^^^^^^^^^^^
-
-./sorbet/rbi/sorbet-typed/lib/railties/all/railties.rbi:21: Unable to resolve constant `StringInquirer` https://srb.help/5002
-    21 |    sig { returns(ActiveSupport::StringInquirer) }
-                          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-
-./sorbet/rbi/sorbet-typed/lib/railties/all/railties.rbi:36: Unable to resolve constant `Configuration` https://srb.help/5002
-    36 |  sig { returns(Rails::Application::Configuration) }
-                        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-
-./sorbet/rbi/sorbet-typed/lib/railties/all/railties.rbi:110: Unable to resolve constant `SourceAnnotationExtractor` https://srb.help/5002
-     110 |SourceAnnotationExtractor = Rails::SourceAnnotationExtractor
-                                      ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-
-./sorbet/rbi/sorbet-typed/lib/railties/all/railties.rbi:58: Malformed `sig`. Type not specified for argument `block` https://srb.help/5003
-    58 |  def routes(&block); end
-                      ^^^^^
-    ./sorbet/rbi/sorbet-typed/lib/railties/all/railties.rbi:57: Signature
-    57 |  sig { returns(ActionDispatch::Routing::RouteSet) }
-          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-
-./sorbet/rbi/gems/mail.rbi:493: Unable to resolve constant `Anonymous_Delegator_7` https://srb.help/5002
-     493 |class Mail::PartsList < Anonymous_Delegator_7
-                                  ^^^^^^^^^^^^^^^^^^^^^
-
-./sorbet/rbi/sorbet-typed/lib/activestorage/all/activestorage.rbi:63: Method `ActiveStorage::Attached::One#detach` redefined without matching argument count. Expected: `2`, got: `0` https://srb.help/4010
-    63 |  def detach; end
-          ^^^^^^^^^^
-    ./sorbet/rbi/gems/activestorage.rbi:333: Previous definition
-     333 |  def detach(*, **, &); end
-            ^^^^^^^^^^^^^^^^^^^^
-
-./sorbet/rbi/sorbet-typed/lib/activestorage/all/activestorage.rbi:68: Method `ActiveStorage::Attached::One#purge` redefined without matching argument count. Expected: `2`, got: `0` https://srb.help/4010
-    68 |  def purge; end
-          ^^^^^^^^^
-    ./sorbet/rbi/gems/activestorage.rbi:336: Previous definition
-     336 |  def purge(*, **, &); end
-            ^^^^^^^^^^^^^^^^^^^
-
-./sorbet/rbi/sorbet-typed/lib/activestorage/all/activestorage.rbi:72: Method `ActiveStorage::Attached::One#purge_later` redefined without matching argument count. Expected: `2`, got: `0` https://srb.help/4010
-    72 |  def purge_later; end
-          ^^^^^^^^^^^^^^^
-    ./sorbet/rbi/gems/activestorage.rbi:337: Previous definition
-     337 |  def purge_later(*, **, &); end
-            ^^^^^^^^^^^^^^^^^^^^^^^^^
-
-./sorbet/rbi/sorbet-typed/lib/activestorage/all/activestorage.rbi:119: Method `ActiveStorage::Attached::Many#detach` redefined without matching argument count. Expected: `2`, got: `0` https://srb.help/4010
-     119 |  def detach; end
-            ^^^^^^^^^^
-    ./sorbet/rbi/gems/activestorage.rbi:346: Previous definition
-     346 |  def detach(*, **, &); end
-            ^^^^^^^^^^^^^^^^^^^^
-
-./sorbet/rbi/sorbet-typed/lib/activestorage/all/activestorage.rbi:124: Method `ActiveStorage::Attached::Many#purge` redefined without matching argument count. Expected: `2`, got: `0` https://srb.help/4010
-     124 |  def purge; end
-            ^^^^^^^^^
-    ./sorbet/rbi/gems/activestorage.rbi:349: Previous definition
-     349 |  def purge(*, **, &); end
-            ^^^^^^^^^^^^^^^^^^^
-
-./sorbet/rbi/sorbet-typed/lib/activestorage/all/activestorage.rbi:128: Method `ActiveStorage::Attached::Many#purge_later` redefined without matching argument count. Expected: `2`, got: `0` https://srb.help/4010
-     128 |  def purge_later; end
-            ^^^^^^^^^^^^^^^
-    ./sorbet/rbi/gems/activestorage.rbi:350: Previous definition
-     350 |  def purge_later(*, **, &); end
-            ^^^^^^^^^^^^^^^^^^^^^^^^^
-
-./sorbet/rbi/sorbet-typed/lib/activestorage/all/activestorage.rbi:23: Unable to resolve constant `Analyzable` https://srb.help/5002
-    23 |  include ActiveStorage::Blob::Analyzable
-                  ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-
-./sorbet/rbi/sorbet-typed/lib/activestorage/all/activestorage.rbi:23: Unable to resolve constant `Analyzable` https://srb.help/5002
-    23 |  include ActiveStorage::Blob::Analyzable
-                  ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-
-./sorbet/rbi/sorbet-typed/lib/activestorage/all/activestorage.rbi:24: Unable to resolve constant `Identifiable` https://srb.help/5002
-    24 |  include ActiveStorage::Blob::Identifiable
-                  ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-
-./sorbet/rbi/sorbet-typed/lib/activestorage/all/activestorage.rbi:24: Unable to resolve constant `Identifiable` https://srb.help/5002
-    24 |  include ActiveStorage::Blob::Identifiable
-                  ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-
-./sorbet/rbi/sorbet-typed/lib/activestorage/all/activestorage.rbi:80: Unable to resolve constant `Analyzable` https://srb.help/5002
-    80 |  include ActiveStorage::Blob::Analyzable
-                  ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-
-./sorbet/rbi/sorbet-typed/lib/activestorage/all/activestorage.rbi:80: Unable to resolve constant `Analyzable` https://srb.help/5002
-    80 |  include ActiveStorage::Blob::Analyzable
-                  ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-
-./sorbet/rbi/sorbet-typed/lib/activestorage/all/activestorage.rbi:81: Unable to resolve constant `Identifiable` https://srb.help/5002
-    81 |  include ActiveStorage::Blob::Identifiable
-                  ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-
-./sorbet/rbi/sorbet-typed/lib/activestorage/all/activestorage.rbi:81: Unable to resolve constant `Identifiable` https://srb.help/5002
-    81 |  include ActiveStorage::Blob::Identifiable
-                  ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-
-./sorbet/rbi/sorbet-typed/lib/activestorage/all/activestorage.rbi:154: Unable to resolve constant `Variant` https://srb.help/5002
-     154 |  sig { params(transformations: T.untyped).returns(ActiveStorage::Variant) }
-                                                             ^^^^^^^^^^^^^^^^^^^^^^
-
-./sorbet/rbi/gems/logger.rbi:34: Method `Logger#initialize` redefined without matching argument count. Expected: `9`, got: `11` https://srb.help/4010
-    34 |  def initialize(logdev, shift_age = nil, shift_size = nil, level: nil, progname: nil, formatter: nil, datetime_format: nil, binmode: nil, shift_period_suffix: nil, reraise_write_errors: nil, skip_header: nil); end
-          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-    https://github.com/sorbet/sorbet/tree/d8bc4cf8c32907c73fc4e37bad875ffaff7658c6/rbi/stdlib/logger.rbi#L434: Previous definition
-     434 |  def initialize(
-     435 |    logdev, shift_age = 0, shift_size = 1048576, level: DEBUG,
-     436 |    progname: nil, formatter: nil, datetime_format: nil,
-     437 |    shift_period_suffix: '%Y%m%d', binmode: false
-     438 |  )
-
-./sorbet/rbi/gems/logger.rbi:42: Method `Logger#reopen` redefined without matching argument count. Expected: `1`, got: `5` https://srb.help/4010
-    42 |  def reopen(logdev = nil, shift_age = nil, shift_size = nil, shift_period_suffix: nil, binmode: nil); end
-          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-    https://github.com/sorbet/sorbet/tree/d8bc4cf8c32907c73fc4e37bad875ffaff7658c6/rbi/stdlib/logger.rbi#L460: Previous definition
-     460 |  def reopen(logdev = nil); end
-            ^^^^^^^^^^^^^^^^^^^^^^^^
-
-./sorbet/rbi/gems/logger.rbi:75: Method `Logger::LogDevice#initialize` redefined without matching argument count. Expected: `5`, got: `7` https://srb.help/4010
-    75 |  def initialize(log = nil, shift_age: nil, shift_size: nil, shift_period_suffix: nil, binmode: nil, reraise_write_errors: nil, skip_header: nil); end
-          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-    https://github.com/sorbet/sorbet/tree/d8bc4cf8c32907c73fc4e37bad875ffaff7658c6/rbi/stdlib/logger.rbi#L667: Previous definition
-     667 |  def initialize(log = nil, shift_age: nil, shift_size: nil, shift_period_suffix: nil, binmode: false); end
-            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-
-./sorbet/rbi/gems/logger.rbi:78: Method `Logger::LogDevice#reopen` redefined without matching argument count. Expected: `1`, got: `5` https://srb.help/4010
-    78 |  def reopen(log = nil, shift_age: nil, shift_size: nil, shift_period_suffix: nil, binmode: nil); end
-          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-    https://github.com/sorbet/sorbet/tree/d8bc4cf8c32907c73fc4e37bad875ffaff7658c6/rbi/stdlib/logger.rbi#L670: Previous definition
-     670 |  def reopen(log = nil); end
-            ^^^^^^^^^^^^^^^^^^^^^
-
-./sorbet/rbi/sorbet-typed/lib/activesupport/all/activesupport.rbi:111: Method `NilClass#try` redefined without matching argument count. Expected: `1`, got: `2` https://srb.help/4010
-     111 |  def try(method_name = nil, *args, &b); end
-            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-    ./sorbet/rbi/gems/activesupport.rbi:343: Previous definition
-     343 |  def try(*); end
-            ^^^^^^^^^^
-
-./sorbet/rbi/sorbet-typed/lib/activesupport/all/activesupport.rbi:120: Method `NilClass#try!` redefined without matching argument count. Expected: `1`, got: `2` https://srb.help/4010
-     120 |  def try!(method_name = nil, *args, &b); end
-            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-    ./sorbet/rbi/gems/activesupport.rbi:342: Previous definition
-     342 |  def try!(*); end
-            ^^^^^^^^^^^
-
-./sorbet/rbi/sorbet-typed/lib/activesupport/all/activesupport.rbi:265: Method `String#truncate` redefined without matching argument count. Expected: `2`, got: `3` https://srb.help/4010
-     265 |  def truncate(truncate_at, separator: nil, omission: "..."); end
-            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-    ./sorbet/rbi/gems/activesupport.rbi:427: Previous definition
-     427 |  def truncate(truncate_to, options = nil); end
-            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-
-./sorbet/rbi/sorbet-typed/lib/activesupport/all/activesupport.rbi:268: Method `String#truncate_words` redefined without matching argument count. Expected: `2`, got: `3` https://srb.help/4010
-     268 |  def truncate_words(words_count, separator: nil, omission: "..."); end
-            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-    ./sorbet/rbi/gems/activesupport.rbi:429: Previous definition
-     429 |  def truncate_words(words_count, options = nil); end
-            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-
-./sorbet/rbi/sorbet-typed/lib/activesupport/all/activesupport.rbi:352: Method `Array#to_sentence` redefined without matching argument count. Expected: `1`, got: `4` https://srb.help/4010
-     352 |  def to_sentence(words_connector: ", ", two_words_connector: " and ", last_word_connector: ", and ", locale: nil); end
-            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-    ./sorbet/rbi/gems/activesupport.rbi:384: Previous definition
-     384 |  def to_sentence(options = nil); end
-            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-
-./sorbet/rbi/sorbet-typed/lib/activesupport/all/activesupport.rbi:384: Method `ActiveSupport::NumberHelper#number_to_currency` redefined without matching argument count. Expected: `2`, got: `8` https://srb.help/4010
-     384 |  def number_to_currency(number, locale: :en, precision: 2, unit: "$", separator: ".", delimiter: ",", format: "%u%n", negative_format: "-%u%n"); end
-            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-    ./sorbet/rbi/gems/activesupport.rbi:2408: Previous definition
-    2408 |  def number_to_currency(number, options = nil); end
-            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-
-./sorbet/rbi/sorbet-typed/lib/activesupport/all/activesupport.rbi:395: Method `ActiveSupport::NumberHelper#number_to_delimited` redefined without matching argument count. Expected: `2`, got: `5` https://srb.help/4010
-     395 |  def number_to_delimited(number, locale: :en, delimiter: ",", separator: ".", delimiter_pattern: nil); end
-            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-    ./sorbet/rbi/gems/activesupport.rbi:2409: Previous definition
-    2409 |  def number_to_delimited(number, options = nil); end
-            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-
-./sorbet/rbi/sorbet-typed/lib/activesupport/all/activesupport.rbi:410: Method `ActiveSupport::NumberHelper#number_to_human` redefined without matching argument count. Expected: `2`, got: `9` https://srb.help/4010
-     410 |  def number_to_human(number, locale: :en, precision: 3, significant: true, separator: ".", delimiter: "", strip_insignificant_zeros: true, units: {}, format: "%n %u"); end
-            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-    ./sorbet/rbi/gems/activesupport.rbi:2410: Previous definition
-    2410 |  def number_to_human(number, options = nil); end
-            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-
-./sorbet/rbi/sorbet-typed/lib/activesupport/all/activesupport.rbi:423: Method `ActiveSupport::NumberHelper#number_to_human_size` redefined without matching argument count. Expected: `2`, got: `7` https://srb.help/4010
-     423 |  def number_to_human_size(number, locale: :en, precision: 3, significant: true, separator: ".", delimiter: "", strip_insignificant_zeros: true); end
-            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-    ./sorbet/rbi/gems/activesupport.rbi:2411: Previous definition
-    2411 |  def number_to_human_size(number, options = nil); end
-            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-
-./sorbet/rbi/sorbet-typed/lib/activesupport/all/activesupport.rbi:437: Method `ActiveSupport::NumberHelper#number_to_percentage` redefined without matching argument count. Expected: `2`, got: `8` https://srb.help/4010
-     437 |  def number_to_percentage(number, locale: :en, precision: 3, significant: false, separator: ".", delimiter: "", strip_insignificant_zeros: false, format: "%n%"); end
-            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-    ./sorbet/rbi/gems/activesupport.rbi:2412: Previous definition
-    2412 |  def number_to_percentage(number, options = nil); end
-            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-
-./sorbet/rbi/sorbet-typed/lib/activesupport/all/activesupport.rbi:449: Method `ActiveSupport::NumberHelper#number_to_phone` redefined without matching argument count. Expected: `2`, got: `6` https://srb.help/4010
-     449 |  def number_to_phone(number, area_code: false, delimiter: "-", extension: nil, country_code: nil, pattern: nil); end
-            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-    ./sorbet/rbi/gems/activesupport.rbi:2413: Previous definition
-    2413 |  def number_to_phone(number, options = nil); end
-            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-
-./sorbet/rbi/sorbet-typed/lib/activesupport/all/activesupport.rbi:462: Method `ActiveSupport::NumberHelper#number_to_rounded` redefined without matching argument count. Expected: `2`, got: `7` https://srb.help/4010
-     462 |  def number_to_rounded(number, locale: :en, precision: 3, significant: false, separator: ".", delimiter: "", strip_insignificant_zeros: false); end
-            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-    ./sorbet/rbi/gems/activesupport.rbi:2414: Previous definition
-    2414 |  def number_to_rounded(number, options = nil); end
-            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-
-./sorbet/rbi/sorbet-typed/lib/activesupport/all/activesupport.rbi:789: Method `ActiveSupport::TimeWithZone#to_s` redefined without matching argument count. Expected: `0`, got: `1` https://srb.help/4010
-     789 |  def to_s(format = :default); end
-            ^^^^^^^^^^^^^^^^^^^^^^^^^^^
-    ./sorbet/rbi/gems/activesupport.rbi:1927: Previous definition
-    1927 |  def to_s; end
-            ^^^^^^^^
-
-./sorbet/rbi/sorbet-typed/lib/activesupport/all/activesupport.rbi:199: Unable to resolve constant `StringInquirer` https://srb.help/5002
-     199 |  sig { returns(ActiveSupport::StringInquirer) }
-                          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-
-./sorbet/rbi/sorbet-typed/lib/activesupport/all/activesupport.rbi:208: Unable to resolve constant `Chars` https://srb.help/5002
-     208 |  sig { returns(ActiveSupport::Multibyte::Chars) }
-                          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-
-./sorbet/rbi/sorbet-typed/lib/activesupport/all/activesupport.rbi:1377: Malformed `sig`. Type not specified for argument `block` https://srb.help/5003
-    1377 |  def deep_merge(other_hash, &block); end
-                                        ^^^^^
-    ./sorbet/rbi/sorbet-typed/lib/activesupport/all/activesupport.rbi:1376: Signature
-    1376 |  sig { params(other_hash: T::Hash[T.untyped, T.untyped]).returns(T::Hash[T.untyped, T.untyped]) }
-            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-
-./sorbet/rbi/sorbet-typed/lib/activesupport/all/activesupport.rbi:1624: Malformed `sig`. Type not specified for argument `block` https://srb.help/5003
-    1624 |  def many?(&block); end
-                       ^^^^^
-    ./sorbet/rbi/sorbet-typed/lib/activesupport/all/activesupport.rbi:1623: Signature
-    1623 |  sig { returns(T::Boolean) }
-            ^^^^^^^^^^^^^^^^^^^^^^^^^^^
-
-./sorbet/rbi/sorbet-typed/lib/activesupport/all/activesupport.rbi:1847: Malformed type declaration. Generic class without type arguments `Class` https://srb.help/5046
-    1847 |  sig { params(klasses: Class, with: T.nilable(Symbol), block: T.nilable(T.proc.params(error: T.untyped).void)).void }
-                                  ^^^^^
-  Autocorrect: Use `-a` to autocorrect
-    ./sorbet/rbi/sorbet-typed/lib/activesupport/all/activesupport.rbi:1847: Replace with `T::Class[T.anything]`
-    1847 |  sig { params(klasses: Class, with: T.nilable(Symbol), block: T.nilable(T.proc.params(error: T.untyped).void)).void }
-                                  ^^^^^
-
-./sorbet/rbi/sorbet-typed/lib/activerecord/>=5.2/activerecord.rbi:11: Unable to resolve constant `DelegateCache` https://srb.help/5002
-    11 |  extend ActiveRecord::Delegation::DelegateCache
-                 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-  Did you mean `Delegator`? Use `-a` to autocorrect
-    ./sorbet/rbi/sorbet-typed/lib/activerecord/>=5.2/activerecord.rbi:11: Replace with `Delegator`
-    11 |  extend ActiveRecord::Delegation::DelegateCache
-                 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-    https://github.com/sorbet/sorbet/tree/d8bc4cf8c32907c73fc4e37bad875ffaff7658c6/rbi/stdlib/delegator.rbi#L40: `Delegator` defined here
-    40 |class Delegator < BasicObject
-        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-  Did you mean `ActiveRecord::Delegation`? Use `-a` to autocorrect
-    ./sorbet/rbi/sorbet-typed/lib/activerecord/>=5.2/activerecord.rbi:11: Replace with `ActiveRecord::Delegation`
-    11 |  extend ActiveRecord::Delegation::DelegateCache
-                 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-    ./sorbet/rbi/sorbet-typed/lib/activerecord/all/activerecord.rbi:293: `ActiveRecord::Delegation` defined here
-     293 |module ActiveRecord::Delegation
-          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-
-./sorbet/rbi/sorbet-typed/lib/activerecord/>=5.2/activerecord.rbi:11: Unable to resolve constant `DelegateCache` https://srb.help/5002
-    11 |  extend ActiveRecord::Delegation::DelegateCache
-                 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-  Did you mean `Delegator`? Use `-a` to autocorrect
-    ./sorbet/rbi/sorbet-typed/lib/activerecord/>=5.2/activerecord.rbi:11: Replace with `Delegator`
-    11 |  extend ActiveRecord::Delegation::DelegateCache
-                 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-    https://github.com/sorbet/sorbet/tree/d8bc4cf8c32907c73fc4e37bad875ffaff7658c6/rbi/stdlib/delegator.rbi#L40: `Delegator` defined here
-    40 |class Delegator < BasicObject
-        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-  Did you mean `ActiveRecord::Delegation`? Use `-a` to autocorrect
-    ./sorbet/rbi/sorbet-typed/lib/activerecord/>=5.2/activerecord.rbi:11: Replace with `ActiveRecord::Delegation`
-    11 |  extend ActiveRecord::Delegation::DelegateCache
-                 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-    ./sorbet/rbi/sorbet-typed/lib/activerecord/all/activerecord.rbi:293: `ActiveRecord::Delegation` defined here
-     293 |module ActiveRecord::Delegation
-          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 ./sorbet/rbi/gems/bigdecimal.rbi:13: Method `Kernel#BigDecimal` redefined without matching argument count. Expected: `3`, got: `1` https://srb.help/4010
     13 |  def BigDecimal(*arg0); end
@@ -1179,53 +1179,6 @@
     https://github.com/sorbet/sorbet/tree/d8bc4cf8c32907c73fc4e37bad875ffaff7658c6/rbi/stdlib/bigdecimal.rbi#L1343: The corresponding argument `arg0` in the previous definition was not a splat argument
     1343 |  def truncate(arg0=T.unsafe(nil)); end
             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-
-./controllers/users_controller.rb:13: Method `params` does not exist on `UsersController` https://srb.help/7003
-    13 |    @users = T.let(User.where("name LIKE '%#{params[:q]}%'"), T.untyped)
-                                                     ^^^^^^
-
-./controllers/users_controller.rb:13: Method `where` does not exist on `T.class_of(User)` https://srb.help/7003
-    13 |    @users = T.let(User.where("name LIKE '%#{params[:q]}%'"), T.untyped)
-                                ^^^^^
-  Got `T.class_of(User)` originating from:
-    ./controllers/users_controller.rb:13:
-    13 |    @users = T.let(User.where("name LIKE '%#{params[:q]}%'"), T.untyped)
-                           ^^^^
-
-./controllers/users_controller.rb:17: Method `params` does not exist on `UsersController` https://srb.help/7003
-    17 |      redirect_to T.cast(params[:return_url], String)
-                                 ^^^^^^
-
-./controllers/users_controller.rb:17: Method `redirect_to` does not exist on `UsersController` https://srb.help/7003
-    17 |      redirect_to T.cast(params[:return_url], String)
-              ^^^^^^^^^^^
-
-./controllers/users_controller.rb:21: Wrong number of arguments for constructor. Expected: `0`, got: `1` https://srb.help/7004
-    21 |    @user = T.let(User.new(user_params), T.untyped)
-                                   ^^^^^^^^^^^
-    https://github.com/sorbet/sorbet/tree/d8bc4cf8c32907c73fc4e37bad875ffaff7658c6/rbi/core/basic_object.rbi#L230: `initialize` defined here
-     230 |  def initialize(); end
-            ^^^^^^^^^^^^^^^^
-  Autocorrect: Use `-a` to autocorrect
-    ./controllers/users_controller.rb:21: Delete
-    21 |    @user = T.let(User.new(user_params), T.untyped)
-                                   ^^^^^^^^^^^
-
-./controllers/users_controller.rb:24: Method `params` does not exist on `UsersController` https://srb.help/7003
-    24 |    search_term = T.cast(params[:q], String)
-                                 ^^^^^^
-
-./controllers/users_controller.rb:29: Method `where` does not exist on `T.class_of(User)` https://srb.help/7003
-    29 |    @admins = T.let(User.where("role = 'admin' AND name LIKE '%#{sanitized_term}%'"), T.untyped)
-                                 ^^^^^
-  Got `T.class_of(User)` originating from:
-    ./controllers/users_controller.rb:29:
-    29 |    @admins = T.let(User.where("role = 'admin' AND name LIKE '%#{sanitized_term}%'"), T.untyped)
-                            ^^^^
-
-./controllers/users_controller.rb:36: Method `params` does not exist on `UsersController` https://srb.help/7003
-    36 |    params.require(:user).permit(:name, :email, :admin)
-            ^^^^^^
 
 ./app.rb:11: Unable to resolve constant `Sinatra` https://srb.help/5002
     11 |class VulnerableApp < Sinatra::Base
@@ -1305,6 +1258,53 @@
 ./app.rb:48: Method `params` does not exist on `T.class_of(VulnerableApp)` https://srb.help/7003
     48 |    filename = params[:name]
                        ^^^^^^
+
+./controllers/users_controller.rb:13: Method `params` does not exist on `UsersController` https://srb.help/7003
+    13 |    @users = T.let(User.where("name LIKE '%#{params[:q]}%'"), T.untyped)
+                                                     ^^^^^^
+
+./controllers/users_controller.rb:13: Method `where` does not exist on `T.class_of(User)` https://srb.help/7003
+    13 |    @users = T.let(User.where("name LIKE '%#{params[:q]}%'"), T.untyped)
+                                ^^^^^
+  Got `T.class_of(User)` originating from:
+    ./controllers/users_controller.rb:13:
+    13 |    @users = T.let(User.where("name LIKE '%#{params[:q]}%'"), T.untyped)
+                           ^^^^
+
+./controllers/users_controller.rb:17: Method `params` does not exist on `UsersController` https://srb.help/7003
+    17 |      redirect_to T.cast(params[:return_url], String)
+                                 ^^^^^^
+
+./controllers/users_controller.rb:17: Method `redirect_to` does not exist on `UsersController` https://srb.help/7003
+    17 |      redirect_to T.cast(params[:return_url], String)
+              ^^^^^^^^^^^
+
+./controllers/users_controller.rb:21: Wrong number of arguments for constructor. Expected: `0`, got: `1` https://srb.help/7004
+    21 |    @user = T.let(User.new(user_params), T.untyped)
+                                   ^^^^^^^^^^^
+    https://github.com/sorbet/sorbet/tree/d8bc4cf8c32907c73fc4e37bad875ffaff7658c6/rbi/core/basic_object.rbi#L230: `initialize` defined here
+     230 |  def initialize(); end
+            ^^^^^^^^^^^^^^^^
+  Autocorrect: Use `-a` to autocorrect
+    ./controllers/users_controller.rb:21: Delete
+    21 |    @user = T.let(User.new(user_params), T.untyped)
+                                   ^^^^^^^^^^^
+
+./controllers/users_controller.rb:24: Method `params` does not exist on `UsersController` https://srb.help/7003
+    24 |    search_term = T.cast(params[:q], String)
+                                 ^^^^^^
+
+./controllers/users_controller.rb:29: Method `where` does not exist on `T.class_of(User)` https://srb.help/7003
+    29 |    @admins = T.let(User.where("role = 'admin' AND name LIKE '%#{sanitized_term}%'"), T.untyped)
+                                 ^^^^^
+  Got `T.class_of(User)` originating from:
+    ./controllers/users_controller.rb:29:
+    29 |    @admins = T.let(User.where("role = 'admin' AND name LIKE '%#{sanitized_term}%'"), T.untyped)
+                            ^^^^
+
+./controllers/users_controller.rb:36: Method `params` does not exist on `UsersController` https://srb.help/7003
+    36 |    params.require(:user).permit(:name, :email, :admin)
+            ^^^^^^
 
 ./models/user.rb:20: Method `save` does not exist on `User` https://srb.help/7003
     20 |    save

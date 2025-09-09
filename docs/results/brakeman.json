@@ -3,9 +3,9 @@
     "app_path": "/Users/kyliestradley/code/ruby-sast-survey",
     "rails_version": "8.0.2.1",
     "security_warnings": 8,
-    "start_time": "2025-09-08 06:04:30 -0400",
-    "end_time": "2025-09-08 06:04:30 -0400",
-    "duration": 0.086013,
+    "start_time": "2025-09-08 20:14:29 -0400",
+    "end_time": "2025-09-08 20:14:29 -0400",
+    "duration": 0.73638,
     "checks_performed": [
       "BasicAuth",
       "BasicAuthTimingAttack",
@@ -86,7 +86,7 @@
       "XMLDoS",
       "YAMLParsing"
     ],
-    "number_of_controllers": 1,
+    "number_of_controllers": 2,
     "number_of_models": 1,
     "number_of_templates": 0,
     "ruby_version": "3.3.8",
@@ -100,7 +100,7 @@
       "check_name": "SQL",
       "message": "Possible SQL injection",
       "file": "controllers/users_controller.rb",
-      "line": 4,
+      "line": 13,
       "link": "https://brakemanscanner.org/docs/warning_types/sql_injection/",
       "code": "User.where(\"name LIKE '%#{params[:q]}%'\")",
       "render_path": null,
@@ -116,35 +116,13 @@
       ]
     },
     {
-      "warning_type": "Redirect",
-      "warning_code": 18,
-      "fingerprint": "2cad50f11143d8faed460e43b4f16bb17ed6a4636575a0d9b124889f5d1af4e9",
-      "check_name": "Redirect",
-      "message": "Possible unprotected redirect",
-      "file": "controllers/users_controller.rb",
-      "line": 8,
-      "link": "https://brakemanscanner.org/docs/warning_types/redirect/",
-      "code": "redirect_to(params[:return_url])",
-      "render_path": null,
-      "location": {
-        "type": "method",
-        "class": "UsersController",
-        "method": "search"
-      },
-      "user_input": "params[:return_url]",
-      "confidence": "High",
-      "cwe_id": [
-        601
-      ]
-    },
-    {
       "warning_type": "SQL Injection",
       "warning_code": 0,
       "fingerprint": "48358ad195acbb788ea10eedb88ecddb922781b8b2443dd05c6085bac5385697",
       "check_name": "SQL",
       "message": "Possible SQL injection",
       "file": "models/user.rb",
-      "line": 39,
+      "line": 54,
       "link": "https://brakemanscanner.org/docs/warning_types/sql_injection/",
       "code": "User.find_by_sql(\"SELECT * FROM users WHERE name LIKE '#{name_pattern}'\")",
       "render_path": null,
@@ -162,45 +140,23 @@
     {
       "warning_type": "SQL Injection",
       "warning_code": 0,
-      "fingerprint": "8289e54428a34f725f88d1cc87da8dfe5cd122ff5bac859a7145211cbf9cf112",
+      "fingerprint": "9200cd3066b3de330870ac18bf12f2c565ce24a741846a692b45a965aa5192b2",
       "check_name": "SQL",
       "message": "Possible SQL injection",
       "file": "controllers/users_controller.rb",
-      "line": 20,
+      "line": 29,
       "link": "https://brakemanscanner.org/docs/warning_types/sql_injection/",
-      "code": "User.where(\"role = 'admin' AND name LIKE '%#{params[:q].upcase.strip}%'\")",
+      "code": "User.where(\"role = 'admin' AND name LIKE '%#{T.cast(params[:q], String).upcase.strip}%'\")",
       "render_path": null,
       "location": {
         "type": "method",
         "class": "UsersController",
         "method": "search"
       },
-      "user_input": "params[:q].upcase",
+      "user_input": "params[:q]",
       "confidence": "Medium",
       "cwe_id": [
         89
-      ]
-    },
-    {
-      "warning_type": "Command Injection",
-      "warning_code": 14,
-      "fingerprint": "902880a9f384c65d56cc2e89973ea0da74fd3b3834e07f49c7ba8275b84622a6",
-      "check_name": "Execute",
-      "message": "Possible command injection",
-      "file": "app.rb",
-      "line": 27,
-      "link": "https://brakemanscanner.org/docs/warning_types/command_injection/",
-      "code": "`ping -c 1 #{host}`",
-      "render_path": null,
-      "location": {
-        "type": "method",
-        "class": "VulnerableApp",
-        "method": null
-      },
-      "user_input": "host",
-      "confidence": "Medium",
-      "cwe_id": [
-        77
       ]
     },
     {
@@ -210,7 +166,7 @@
       "check_name": "Execute",
       "message": "Possible command injection",
       "file": "models/user.rb",
-      "line": 27,
+      "line": 40,
       "link": "https://brakemanscanner.org/docs/warning_types/command_injection/",
       "code": "system(\"backup_script.sh #{self.id}\")",
       "render_path": null,
@@ -232,7 +188,7 @@
       "check_name": "Evaluation",
       "message": "Dynamic code evaluation",
       "file": "models/user.rb",
-      "line": 4,
+      "line": 13,
       "link": "https://brakemanscanner.org/docs/warning_types/dangerous_eval/",
       "code": "eval(formula)",
       "render_path": null,
@@ -249,13 +205,57 @@
       ]
     },
     {
+      "warning_type": "Redirect",
+      "warning_code": 18,
+      "fingerprint": "b5c8d2b186f1cc812c3f93793624906161de1988dd4601b282bb2523051d9116",
+      "check_name": "Redirect",
+      "message": "Possible unprotected redirect",
+      "file": "controllers/users_controller.rb",
+      "line": 17,
+      "link": "https://brakemanscanner.org/docs/warning_types/redirect/",
+      "code": "redirect_to(T.cast(params[:return_url], String))",
+      "render_path": null,
+      "location": {
+        "type": "method",
+        "class": "UsersController",
+        "method": "search"
+      },
+      "user_input": "params[:return_url]",
+      "confidence": "Weak",
+      "cwe_id": [
+        601
+      ]
+    },
+    {
+      "warning_type": "Command Injection",
+      "warning_code": 14,
+      "fingerprint": "cfd9d5d9d021db823ab5a02064e7d0e10055e715037a7893b1a1cefcced560d9",
+      "check_name": "Execute",
+      "message": "Possible command injection",
+      "file": "app.rb",
+      "line": 41,
+      "link": "https://brakemanscanner.org/docs/warning_types/command_injection/",
+      "code": "`ping -c 1 #{T.cast(params[:host], T.nilable(String))}`",
+      "render_path": null,
+      "location": {
+        "type": "method",
+        "class": "VulnerableApp",
+        "method": "ping_host"
+      },
+      "user_input": "params[:host]",
+      "confidence": "High",
+      "cwe_id": [
+        77
+      ]
+    },
+    {
       "warning_type": "Mass Assignment",
       "warning_code": 105,
       "fingerprint": "ec9e3ca4bbd888fea3a21fd3f6711e741573a15f6615c238c6ae019bf40fd7af",
       "check_name": "PermitAttributes",
       "message": "Potentially dangerous key allowed for mass assignment",
       "file": "controllers/users_controller.rb",
-      "line": 25,
+      "line": 36,
       "link": "https://brakemanscanner.org/docs/warning_types/mass_assignment/",
       "code": "params.require(:user).permit(:name, :email, :admin)",
       "render_path": null,

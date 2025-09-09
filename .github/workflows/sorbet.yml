@@ -1,0 +1,107 @@
+name: Sorbet Type Check
+
+on:
+  push:
+    branches: [ main, develop ]
+  pull_request:
+    branches: [ main ]
+  workflow_dispatch:
+
+permissions:
+  contents: read
+  security-events: write
+  actions: read
+
+jobs:
+  sorbet:
+    name: Sorbet Type Analysis
+    runs-on: ubuntu-latest
+    
+    steps:
+    - name: Checkout code
+      uses: actions/checkout@v3
+      
+    - name: Set up Ruby
+      uses: ruby/setup-ruby@v1
+      with:
+        ruby-version: 3.2
+        bundler-cache: true
+        
+    - name: Run Sorbet type check
+      run: |
+        bundle exec srb typecheck 2>&1 | tee sorbet-results.txt
+      continue-on-error: true
+        
+    - name: Convert Sorbet results to SARIF
+      run: |
+        cat > convert_sorbet_to_sarif.rb << 'EOF'
+        require 'json'
+        
+        sorbet_output = File.read('sorbet-results.txt')
+        
+        sarif = {
+          "$schema": "https://schemastore.azurewebsites.net/schemas/json/sarif-2.1.0.json",
+          "version": "2.1.0",
+          "runs": [{
+            "tool": {
+              "driver": {
+                "name": "Sorbet",
+                "version": "0.5.11",
+                "informationUri": "https://sorbet.org/",
+                "rules": [{
+                  id: "type_error",
+                  name: "Type Error",
+                  shortDescription: { text: "Sorbet type checking error" },
+                  fullDescription: { text: "Type checking error detected by Sorbet" },
+                  defaultConfiguration: { level: "error" }
+                }]
+              }
+            },
+            "results": []
+          }]
+        }
+        
+        # Parse Sorbet output (format: filename:line: message)
+        sorbet_output.each_line do |line|
+          next unless line.match(/^(.+):(\d+): (.+)$/)
+          
+          file = $1
+          line_num = $2.to_i
+          message = $3.strip
+          
+          # Skip non-error lines
+          next unless message.include?('error:') || message.include?('Error:')
+          
+          result = {
+            ruleId: "type_error",
+            message: { text: message },
+            locations: [{
+              physicalLocation: {
+                artifactLocation: { uri: file },
+                region: { startLine: line_num }
+              }
+            }],
+            level: "error"
+          }
+          
+          sarif[:runs][0][:results] << result
+        end
+        
+        File.write('sorbet-results.sarif', JSON.pretty_generate(sarif))
+        EOF
+        
+        ruby convert_sorbet_to_sarif.rb
+        
+    - name: Upload Sorbet SARIF results
+      uses: github/codeql-action/upload-sarif@v3
+      with:
+        sarif_file: sorbet-results.sarif
+        category: sorbet
+        
+    - name: Upload results as artifacts
+      uses: actions/upload-artifact@v3
+      with:
+        name: sorbet-results
+        path: |
+          sorbet-results.txt
+          sorbet-results.sarif

@@ -1,0 +1,49 @@
+name: CodeQL Security Analysis
+
+on:
+  push:
+    branches: [ main, develop ]
+  pull_request:
+    branches: [ main ]
+  workflow_dispatch:
+
+permissions:
+  contents: read
+  security-events: write
+  actions: read
+
+jobs:
+  codeql:
+    name: CodeQL Analysis
+    runs-on: ubuntu-latest
+    
+    steps:
+    - name: Checkout code
+      uses: actions/checkout@v3
+      
+    - name: Initialize CodeQL
+      uses: github/codeql-action/init@v3
+      with:
+        languages: ruby
+        config-file: ./.github/codeql/codeql-config.yml
+        
+    - name: Set up Ruby
+      uses: ruby/setup-ruby@v1
+      with:
+        ruby-version: 3.2
+        bundler-cache: true
+        
+    - name: Autobuild
+      uses: github/codeql-action/autobuild@v3
+      
+    - name: Perform CodeQL Analysis
+      uses: github/codeql-action/analyze@v3
+      with:
+        category: "/language:ruby"
+        upload: true
+        
+    - name: Upload CodeQL database as artifact
+      uses: actions/upload-artifact@v3
+      with:
+        name: codeql-database
+        path: /home/runner/work/_temp/codeql_databases/
