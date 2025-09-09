@@ -1,20 +1,47 @@
+# Custom OpenGrep rules for Ruby SAST Survey
+# Note: Use 'opengrep --config auto .' for comprehensive community rules
+# This file contains only custom rules for demonstration
+
 rules:
-  - id: sql-injection-rails
-    pattern: |
-      User.where("... #{$PARAM} ...")
-    message: Potential SQL injection vulnerability
-    languages: [ruby]
-    severity: ERROR
-
-  - id: open-redirect
-    pattern: redirect_to params[...]
-    message: Potential open redirect vulnerability
-    languages: [ruby]
-    severity: WARNING
-
-  - id: mass-assignment
+  # Custom mass assignment rule (better detection than community)
+  - id: mass-assignment-admin
     pattern: |
       params.require(:user).permit(..., :admin, ...)
-    message: Mass assignment on admin field
+    message: Mass assignment vulnerability - admin field exposed in permit()
     languages: [ruby]
     severity: ERROR
+    metadata:
+      cwe: "CWE-915"
+      category: security
+      subcategory: mass-assignment
+
+  # Enhanced open redirect (covers more patterns than community)
+  - id: open-redirect-enhanced
+    patterns:
+      - pattern-either:
+          - pattern: redirect_to params[...]
+          - pattern: redirect_to T.cast(params[...], ...)
+          - pattern: redirect_to request[...]
+    message: Open redirect vulnerability - user controls redirect destination
+    languages: [ruby]
+    severity: WARNING
+    metadata:
+      cwe: "CWE-601"
+      category: security
+      subcategory: open-redirect
+
+  # Additional SQL injection pattern (for demonstration)
+  - id: sql-injection-custom
+    patterns:
+      - pattern-either:
+          - pattern: |
+              $MODEL.where("... #{$VAR} ...")
+          - pattern: |
+              execute("... #{$VAR} ...")
+    message: Custom SQL injection detection - string interpolation in query
+    languages: [ruby]
+    severity: ERROR
+    metadata:
+      cwe: "CWE-89"
+      category: security
+      subcategory: sql-injection

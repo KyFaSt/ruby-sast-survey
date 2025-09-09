@@ -54,58 +54,93 @@ The application contains intentionally vulnerable Ruby code to test SAST tool de
 ## Tools Tested
 
 ### 1. Brakeman
-Rails-specific security scanner with deep framework knowledge.
-```bash
-bundle exec brakeman --force --format json --output docs/results/brakeman.json
-```
+**Focus**: Rails-specific security scanner with deep framework knowledge
+**Strengths**: 
+- Excellent Rails vulnerability detection (SQL injection, mass assignment, open redirects)
+- Framework-aware analysis reduces false positives
+- High confidence scoring system
+- Zero setup for Rails projects
+
+**Weaknesses**:
+- Limited to Rails/Ruby applications
+- May miss vulnerabilities in non-Rails Ruby code
+- Less effective on modern Rails security features
 
 ### 2. RuboCop
-Ruby static code analyzer with security cops enabled.
-```bash
-bundle exec rubocop --format json --out docs/results/rubocop.json
-```
+**Focus**: Ruby static code analyzer with security cops enabled
+**Strengths**:
+- Comprehensive code quality and style analysis
+- Security cops catch dangerous patterns (eval, YAML.load)
+- Highly configurable with team-specific rules
+- Fast execution and good IDE integration
 
-### 3. Opengrep (Semgrep)
-Pattern-based security scanner with custom rules.
-```bash
-opengrep --config=opengrep.yml --json --output=docs/results/opengrep.json .
-```
+**Weaknesses**:
+- Limited security focus (primarily style/quality tool)
+- No data flow analysis capabilities
+- Security detection depends on specific cop configuration
+
+### 3. Opengrep
+**Focus**: Pattern-based security scanner with community and custom rules
+**Strengths**:
+- Excellent community rules with taint tracking capabilities
+- Easy custom rule creation with YAML syntax
+- Cross-language support
+- Good balance of speed and accuracy with community rules
+
+**Weaknesses**:
+- Custom rules require significant maintenance
+- Community rules may have occasional false positives
+- Limited Ruby/Rails expertise without community rulesets
 
 ### 4. AST-grep
-Structural search tool for finding security patterns.
-```bash
-# Run with JSON output
-ast-grep scan --json=pretty > docs/results/ast-grep.json
+**Focus**: Structural search tool for finding security patterns
+**Strengths**:
+- Fast structural pattern matching
+- Precise AST-based queries reduce false positives
+- Excellent for team-specific vulnerability patterns
+- Simple YAML rule syntax
 
-# Run with default output
-ast-grep scan
-```
+**Weaknesses**:
+- No built-in security knowledge or data flow analysis
+- Requires custom rules for each vulnerability type
+- Limited out-of-the-box security coverage
 
 ### 5. DevSkim
-Microsoft's lightweight security linter.
-```bash
-# Install (requires .NET SDK)
-brew install --cask dotnet-sdk
-dotnet tool install --global Microsoft.CST.DevSkim.CLI
-export PATH="$PATH:$HOME/.dotnet/tools"
+**Focus**: Microsoft's lightweight security linter
+**Strengths**:
+- Cross-language security pattern detection
+- Easy integration into development workflows
+- Good coverage of common security anti-patterns
 
-# Run analysis
-devskim analyze -I . -O docs/results/devskim.sarif -f sarif
-devskim analyze -I . -O docs/results/devskim.txt -f text
-```
+**Weaknesses**:
+- High false positive rate due to pattern-only matching
+- Limited Ruby/Rails specific knowledge
+- No understanding of framework idioms or data flow
 
 ### 6. CodeQL
-GitHub's semantic code analysis engine.
-```bash
-# Create database
-codeql database create ruby-db --language=ruby --source-root=.
+**Focus**: GitHub's semantic code analysis engine
+**Strengths**:
+- Excellent semantic analysis with data flow tracking
+- Enterprise-grade precision and low false positive rate
+- Sophisticated taint tracking through complex transformations
+- Comprehensive query suites for multiple languages
 
-# Download query pack
-codeql pack download codeql/ruby-queries
+**Weaknesses**:
+- Slow execution (not suitable for fast CI/CD)
+- Complex setup and query development
+- Limited Ruby security query coverage compared to Java/C#
 
-# Run analysis
-codeql database analyze ruby-db codeql/ruby-queries:codeql-suites/ruby-security-and-quality.qls --format=sarif-latest --output=docs/results/codeql.sarif
-```
+### 7. Sorbet
+**Focus**: Gradual type checker for Ruby
+**Strengths**:
+- Catches type-related bugs and logic errors
+- Improves code maintainability and documentation
+- Good IDE integration with type hints
+
+**Weaknesses**:
+- Not a security tool (type checking focus)
+- Requires type annotations for full effectiveness
+- No security vulnerability detection capabilities
 
 ## Quick Start
 
@@ -151,7 +186,10 @@ codeql database analyze ruby-db codeql/ruby-queries:codeql-suites/ruby-security-
    # AST-grep - Structural search
    ast-grep scan --json=pretty > docs/results/ast-grep.json
    
-   # Opengrep - Pattern-based security scanner
+   # Opengrep - Pattern-based security scanner (use community rules for better coverage)
+   opengrep --config auto --json --output=docs/results/opengrep.json .
+   
+   # Or use custom rules only (limited coverage)
    opengrep --config=opengrep.yml --json --output=docs/results/opengrep.json .
    
    # CodeQL - Semantic analysis

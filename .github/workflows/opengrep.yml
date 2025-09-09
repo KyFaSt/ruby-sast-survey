@@ -29,13 +29,17 @@ jobs:
     - name: Create results directory
       run: mkdir -p results-actions
         
-    - name: Run Opengrep scan
+    - name: Run Opengrep scan (community rules)
       run: |
-        opengrep --config=opengrep.yml --sarif --output=results-actions/opengrep-results.sarif .
+        opengrep --config=auto --sarif --output=results-actions/opengrep-results.sarif .
         
-    - name: Also generate JSON output
+    - name: Also generate JSON output (community rules)
       run: |
-        opengrep --config=opengrep.yml --json --output=results-actions/opengrep-results.json .
+        opengrep --config=auto --json --output=results-actions/opengrep-results.json .
+        
+    - name: Run custom rules scan for comparison
+      run: |
+        opengrep --config=opengrep.yml --json --output=results-actions/opengrep-custom-results.json . || true
         
     - name: Upload Opengrep SARIF results
       uses: github/codeql-action/upload-sarif@v3
