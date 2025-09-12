@@ -1,0 +1,116 @@
+{
+  "tool": "CodeQL",
+  "version": "2.23.0",
+  "scan_date": "2025-09-11",
+  "total_findings": 10,
+  "results": [
+    {
+      "rule_id": "rb/code-injection",
+      "message": "This code execution depends on a [user-provided value](1).",
+      "file": "app.rb",
+      "line": 62,
+      "severity": "error",
+      "cwe": [
+        "external/cwe/cwe-094",
+        "external/cwe/cwe-095",
+        "external/cwe/cwe-116"
+      ]
+    },
+    {
+      "rule_id": "rb/url-redirection",
+      "message": "Untrusted URL redirection depends on a [user-provided value](1).",
+      "file": "controllers/users_controller.rb",
+      "line": 12,
+      "severity": "error",
+      "cwe": [
+        "external/cwe/cwe-601"
+      ]
+    },
+    {
+      "rule_id": "rb/sql-injection",
+      "message": "This SQL query depends on a [user-provided value](1).",
+      "file": "controllers/users_controller.rb",
+      "line": 8,
+      "severity": "error",
+      "cwe": [
+        "external/cwe/cwe-089"
+      ]
+    },
+    {
+      "rule_id": "rb/sql-injection",
+      "message": "This SQL query depends on a [user-provided value](1).",
+      "file": "controllers/users_controller.rb",
+      "line": 24,
+      "severity": "error",
+      "cwe": [
+        "external/cwe/cwe-089"
+      ]
+    },
+    {
+      "rule_id": "rb/sql-injection",
+      "message": "This SQL query depends on a [user-provided value](1).",
+      "file": "app.rb",
+      "line": 29,
+      "severity": "error",
+      "cwe": [
+        "external/cwe/cwe-089"
+      ]
+    },
+    {
+      "rule_id": "rb/csrf-protection-not-enabled",
+      "message": "Potential CSRF vulnerability due to forgery protection not being enabled.",
+      "file": "controllers/payments_controller.rb",
+      "line": 2,
+      "severity": "warning",
+      "cwe": [
+        "external/cwe/cwe-352"
+      ]
+    },
+    {
+      "rule_id": "rb/csrf-protection-not-enabled",
+      "message": "Potential CSRF vulnerability due to forgery protection not being enabled.",
+      "file": "controllers/users_controller.rb",
+      "line": 5,
+      "severity": "warning",
+      "cwe": [
+        "external/cwe/cwe-352"
+      ]
+    },
+    {
+      "rule_id": "rb/path-injection",
+      "message": "This path depends on a [user-provided value](1).",
+      "file": "app.rb",
+      "line": 52,
+      "severity": "error",
+      "cwe": [
+        "external/cwe/cwe-022",
+        "external/cwe/cwe-023",
+        "external/cwe/cwe-036",
+        "external/cwe/cwe-073",
+        "external/cwe/cwe-099"
+      ]
+    },
+    {
+      "rule_id": "rb/command-line-injection",
+      "message": "This command depends on a [user-provided value](1).",
+      "file": "controllers/payments_controller.rb",
+      "line": 12,
+      "severity": "error",
+      "cwe": [
+        "external/cwe/cwe-078",
+        "external/cwe/cwe-088"
+      ]
+    },
+    {
+      "rule_id": "rb/command-line-injection",
+      "message": "This command depends on a [user-provided value](1).",
+      "file": "app.rb",
+      "line": 44,
+      "severity": "error",
+      "cwe": [
+        "external/cwe/cwe-078",
+        "external/cwe/cwe-088"
+      ]
+    }
+  ]
+}

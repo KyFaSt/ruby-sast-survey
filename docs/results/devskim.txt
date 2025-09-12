@@ -1,33 +1,73 @@
-ruby-db/results/run-info-20250909.001922.552.yml:191:116:191:139 [Moderate] DS137138 Insecure URL
-models/user.rb:26:4:26:13 [ManualReview] DS425030 Do not deserialize untrusted data.
+models/user.rb:19:4:19:13 [ManualReview] DS425030 Do not deserialize untrusted data.
+docs/results/brakeman-final.json:99:21:99:87 [Important] DS173237 Do not store tokens or keys in source code.
+docs/results/brakeman-final.json:121:21:121:87 [Important] DS173237 Do not store tokens or keys in source code.
+docs/results/brakeman-final.json:143:21:143:87 [Important] DS173237 Do not store tokens or keys in source code.
+docs/results/brakeman-final.json:165:21:165:87 [Important] DS173237 Do not store tokens or keys in source code.
+docs/results/brakeman-final.json:187:21:187:87 [Important] DS173237 Do not store tokens or keys in source code.
+docs/results/brakeman-final.json:209:21:209:87 [Important] DS173237 Do not store tokens or keys in source code.
+docs/results/brakeman-final.json:231:21:231:87 [Important] DS173237 Do not store tokens or keys in source code.
+docs/results/brakeman-final.json:253:21:253:87 [Important] DS173237 Do not store tokens or keys in source code.
+docs/results/brakeman-final.json:275:21:275:87 [Important] DS173237 Do not store tokens or keys in source code.
+docs/results/brakeman-final.json:298:21:298:87 [Important] DS173237 Do not store tokens or keys in source code.
+docs/results/brakeman-final.json:320:21:320:87 [Important] DS173237 Do not store tokens or keys in source code.
+docs/results/brakeman-final.json:342:21:342:87 [Important] DS173237 Do not store tokens or keys in source code.
+ruby-db/results/run-info-20250910.112642.504.yml:191:116:191:139 [Moderate] DS137138 Insecure URL
+ruby-db-fresh/results/run-info-20250911.160030.818.yml:191:116:191:139 [Moderate] DS137138 Insecure URL
+ruby-db/results/run-info-20250910.112642.504.yml:191:189:191:212 [Moderate] DS137138 Insecure URL
+ruby-db-fresh/results/run-info-20250911.160030.818.yml:191:189:191:212 [Moderate] DS137138 Insecure URL
+ruby-db-fresh/results/run-info-20250911.160030.818.yml:207:75:207:99 [Moderate] DS137138 Insecure URL
+ruby-db/results/run-info-20250910.112642.504.yml:207:75:207:99 [Moderate] DS137138 Insecure URL
+ruby-db-fresh/results/run-info-20250911.160030.818.yml:207:101:207:138 [Moderate] DS137138 Insecure URL
+ruby-db/results/run-info-20250910.112642.504.yml:207:101:207:138 [Moderate] DS137138 Insecure URL
+ruby-db-fresh/results/run-info-20250911.160030.818.yml:306:103:306:121 [Moderate] DS137138 Insecure URL
+ruby-db/results/run-info-20250910.112642.504.yml:306:103:306:121 [Moderate] DS137138 Insecure URL
+ruby-db-fresh/results/run-info-20250911.160030.818.yml:306:156:306:179 [Moderate] DS137138 Insecure URL
+ruby-db/results/run-info-20250910.112642.504.yml:306:156:306:179 [Moderate] DS137138 Insecure URL
+ruby-db/results/run-info-20250910.112642.504.yml:306:183:306:201 [Moderate] DS137138 Insecure URL
+ruby-db-fresh/results/run-info-20250911.160030.818.yml:306:183:306:201 [Moderate] DS137138 Insecure URL
+ruby-db/results/run-info-20250910.112642.504.yml:680:82:680:102 [Moderate] DS137138 Insecure URL
+ruby-db-fresh/results/run-info-20250911.160030.818.yml:680:82:680:102 [Moderate] DS137138 Insecure URL
+ruby-db/results/run-info-20250910.112642.504.yml:738:40:738:63 [Moderate] DS137138 Insecure URL
+ruby-db/results/run-info-20250910.112642.504.yml:801:40:801:63 [Moderate] DS137138 Insecure URL
+ruby-db/results/run-info-20250910.112642.504.yml:864:40:864:63 [Moderate] DS137138 Insecure URL
+ruby-db/results/run-info-20250910.112642.504.yml:1838:12:1838:31 [Moderate] DS137138 Insecure URL
+ruby-db/results/run-info-20250910.112642.504.yml:2027:193:2027:196 [Critical] DS106863 Do not use the DES symmetric block cipher.
+ruby-db/results/run-info-20250910.112642.504.yml:2056:61:2056:81 [Moderate] DS137138 Insecure URL
+ruby-db/results/run-info-20250910.112642.504.yml:2057:126:2057:149 [Moderate] DS137138 Insecure URL
+ruby-db/results/run-info-20250910.112642.504.yml:2088:24:2088:27 [Critical] DS126858 Weak/Broken Hash Algorithm
+ruby-db/results/run-info-20250910.112642.504.yml:2088:32:2088:37 [Critical] DS126858 Weak/Broken Hash Algorithm
+ruby-db/results/run-info-20250910.112642.504.yml:2102:164:2102:167 [Critical] DS126858 Weak/Broken Hash Algorithm
+ruby-db-fresh/results/run-info-20250911.160030.818.yml:738:40:738:63 [Moderate] DS137138 Insecure URL
+ruby-db-fresh/results/run-info-20250911.160030.818.yml:801:40:801:63 [Moderate] DS137138 Insecure URL
+ruby-db-fresh/results/run-info-20250911.160030.818.yml:864:40:864:63 [Moderate] DS137138 Insecure URL
+ruby-db-fresh/results/run-info-20250911.160030.818.yml:1838:12:1838:31 [Moderate] DS137138 Insecure URL
+ruby-db-fresh/results/run-info-20250911.160030.818.yml:2027:193:2027:196 [Critical] DS106863 Do not use the DES symmetric block cipher.
+ruby-db-fresh/results/run-info-20250911.160030.818.yml:2056:61:2056:81 [Moderate] DS137138 Insecure URL
+ruby-db/results/run-info-20250910.112642.504.yml:2109:34:2109:38 [Critical] DS126858 Weak/Broken Hash Algorithm
+ruby-db-fresh/results/run-info-20250911.160030.818.yml:2057:126:2057:149 [Moderate] DS137138 Insecure URL
+ruby-db/results/run-info-20250910.112642.504.yml:2510:9:2510:29 [Moderate] DS137138 Insecure URL
+ruby-db/results/run-info-20250910.112642.504.yml:2511:9:2511:29 [Moderate] DS137138 Insecure URL-20250911.160030.818.yml:2088:24:2088:27 [Critical] DS126858 Weak/Broken Hash Algorithm
+un-info-20250911.160030.818.ym
+ruby-db/results/run-info-20250910.112642.504.yml:2714:28:2714:57 [Moderate] DS137138 Insecure URL
+ruby-db-fresh/results/run-info-20250911.160030.818.yml:2088:32:2088:37 [Critical] DS126858 Weak/Broken Hash Algorithm
+ruby-db-fresh/results/run-info-20250911.160030.818.yml:2102:164:2102:167 [Critical] DS126858 Weak/Broken Hash Algorithm
+ruby-db-fresh/results/run-info-20250911.160030.818.yml:2109:34:2109:38 [Critical] DS126858 Weak/Broken Hash Algorithm
+ruby-db-fresh/results/run-info-20250911.160030.818.yml:2510:9:2510:29 [Moderate] DS137138 Insecure URL
+ruby-db-fresh/results/run-info-20250911.160030.818.yml:2511:9:2511:29 [Moderate] DS137138 Insecure URL
+ruby-db-fresh/results/run-info-20250911.160030.818.yml:2714:28:2714:57 [Moderate] DS137138 Insecure URL
+docs/results/opengrep-final.json:1:882:1:29454 [Critical] DS117838 Do not store tokens or keys in source code.
 docs/results/brakeman.json:99:21:99:87 [Important] DS173237 Do not store tokens or keys in source code.
-ruby-db/results/run-info-20250909.001922.552.yml:191:189:191:212 [Moderate] DS137138 Insecure URL
 docs/results/brakeman.json:121:21:121:87 [Important] DS173237 Do not store tokens or keys in source code.
 docs/results/brakeman.json:143:21:143:87 [Important] DS173237 Do not store tokens or keys in source code.
 docs/results/brakeman.json:165:21:165:87 [Important] DS173237 Do not store tokens or keys in source code.
 docs/results/brakeman.json:187:21:187:87 [Important] DS173237 Do not store tokens or keys in source code.
-docs/results/brakeman.json:210:21:210:87 [Important] DS173237 Do not store tokens or keys in source code.
-docs/results/brakeman.json:232:21:232:87 [Important] DS173237 Do not store tokens or keys in source code.
-docs/results/brakeman.json:254:21:254:87 [Important] DS173237 Do not store tokens or keys in source code.ls/user.rb:26:4:26:13 [ManualReview] DS425030 Do not deserialize untrusted data.
-docs/results/brak
-ruby-db/results/run-info-20250909.001922.552.yml:306:103:306:121 [Moderate] DS137138 Insecure URL
-ruby-db/results/run-info-20250909.001922.552.yml:306:156:306:179 [Moderate] DS137138 Insecure URL
-ruby-db/results/run-info-20250909.001922.552.yml:306:183:306:201 [Moderate] DS137138 Insecure URL
-ruby-db/results/run-info-20250909.001922.552.yml:680:82:680:102 [Moderate] DS137138 Insecure URL
-ruby-db/results/run-info-20250909.001922.552.yml:738:40:738:63 [Moderate] DS137138 Insecure URL
-ruby-db/results/run-info-20250909.001922.552.yml:801:40:801:63 [Moderate] DS137138 Insecure URL
-ruby-db/results/run-info-20250909.001922.552.yml:864:40:864:63 [Moderate] DS137138 Insecure URL
-ruby-db/results/run-info-20250909.001922.552.yml:1838:12:1838:31 [Moderate] DS137138 Insecure URL
-ruby-db/results/run-info-20250909.001922.552.yml:2027:193:2027:196 [Critical] DS106863 Do not use the DES symmetric block cipher.
-ruby-db/results/run-info-20250909.001922.552.yml:2056:61:2056:81 [Moderate] DS137138 Insecure URL
-ruby-db/results/run-info-20250909.001922.552.yml:2057:126:2057:149 [Moderate] DS137138 Insecure URL
-ruby-db/results/run-info-20250909.001922.552.yml:2088:24:2088:27 [Critical] DS126858 Weak/Broken Hash Algorithm
-ruby-db/results/run-info-20250909.001922.552.yml:2088:32:2088:37 [Critical] DS126858 Weak/Broken Hash Algorithm
-ruby-db/results/run-info-20250909.001922.552.yml:2102:164:2102:167 [Critical] DS126858 Weak/Broken Hash Algorithm
-ruby-db/results/run-info-20250909.001922.552.yml:2109:34:2109:38 [Critical] DS126858 Weak/Broken Hash Algorithm
-ruby-db/results/run-info-20250909.001922.552.yml:2510:9:2510:29 [Moderate] DS137138 Insecure URL
-ruby-db/results/run-info-20250909.001922.552.yml:2511:9:2511:29 [Moderate] DS137138 Insecure URL
-ruby-db/results/run-info-20250909.001922.552.yml:2714:28:2714:57 [Moderate] DS137138 Insecure URL
+docs/results/brakeman.json:209:21:209:87 [Important] DS173237 Do not store tokens or keys in source code.
+docs/results/brakeman.json:231:21:231:87 [Important] DS173237 Do not store tokens or keys in source code.
+docs/results/brakeman.json:253:21:253:87 [Important] DS173237 Do not store tokens or keys in source code.
+docs/results/brakeman.json:275:21:275:87 [Important] DS173237 Do not store tokens or keys in source code.
+docs/results/brakeman.json:298:21:298:87 [Important] DS173237 Do not store tokens or keys in source code.
+docs/results/brakeman.json:320:21:320:87 [Important] DS173237 Do not store tokens or keys in source code.
+docs/results/brakeman.json:342:21:342:87 [Important] DS173237 Do not store tokens or keys in source code.
 docs/results/devskim.json:1:410:1:30153 [Critical] DS117838 Do not store tokens or keys in source code.
 docs/results/devskim.json:1:3814:1:3817 [Critical] DS106863 Do not use the DES symmetric block cipher.
 docs/results/devskim.json:1:3847:1:3850 [Critical] DS106863 Do not use the DES symmetric block cipher.
@@ -88,4 +128,5 @@ docs/results/devskim.json:1:23296:1:23320 [Moderate] DS137138 Insecure URL
 docs/results/devskim.json:1:24082:1:24105 [Moderate] DS137138 Insecure URL
 docs/results/devskim.json:1:24127:1:24150 [Moderate] DS137138 Insecure URL
 docs/results/devskim.json:1:24165:1:24189 [Moderate] DS137138 Insecure URL
+docs/results/opengrep.json:1:882:1:31925 [Critical] DS117838 Do not store tokens or keys in source code.
 For guidance on reported issues visit the relevant page here: https://github.com/microsoft/DevSkim/tree/main/guidance

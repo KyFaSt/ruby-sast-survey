@@ -1,0 +1,244 @@
+{
+  "$schema": "https://json.schemastore.org/sarif-2.1.0.json",
+  "version": "2.1.0",
+  "runs": [
+    {
+      "tool": {
+        "driver": {
+          "name": "Brakeman",
+          "semanticVersion": "7.1.0"
+        }
+      },
+      "results": [
+        {
+          "ruleId": "brakeman.sql-injection",
+          "message": {
+            "text": "Possible SQL injection"
+          },
+          "locations": [
+            {
+              "physicalLocation": {
+                "artifactLocation": {
+                  "uri": "controllers/users_controller.rb"
+                },
+                "region": {
+                  "startLine": 8
+                }
+              }
+            }
+          ],
+          "level": "warning"
+        },
+        {
+          "ruleId": "brakeman.command-injection",
+          "message": {
+            "text": "Possible command injection"
+          },
+          "locations": [
+            {
+              "physicalLocation": {
+                "artifactLocation": {
+                  "uri": "controllers/payments_controller.rb"
+                },
+                "region": {
+                  "startLine": 12
+                }
+              }
+            }
+          ],
+          "level": "warning"
+        },
+        {
+          "ruleId": "brakeman.redirect",
+          "message": {
+            "text": "Possible unprotected redirect"
+          },
+          "locations": [
+            {
+              "physicalLocation": {
+                "artifactLocation": {
+                  "uri": "controllers/users_controller.rb"
+                },
+                "region": {
+                  "startLine": 12
+                }
+              }
+            }
+          ],
+          "level": "error"
+        },
+        {
+          "ruleId": "brakeman.sql-injection",
+          "message": {
+            "text": "Possible SQL injection"
+          },
+          "locations": [
+            {
+              "physicalLocation": {
+                "artifactLocation": {
+                  "uri": "models/user.rb"
+                },
+                "region": {
+                  "startLine": 43
+                }
+              }
+            }
+          ],
+          "level": "warning"
+        },
+        {
+          "ruleId": "brakeman.command-injection",
+          "message": {
+            "text": "Possible command injection"
+          },
+          "locations": [
+            {
+              "physicalLocation": {
+                "artifactLocation": {
+                  "uri": "app.rb"
+                },
+                "region": {
+                  "startLine": 19
+                }
+              }
+            }
+          ],
+          "level": "warning"
+        },
+        {
+          "ruleId": "brakeman.sql-injection",
+          "message": {
+            "text": "Possible SQL injection"
+          },
+          "locations": [
+            {
+              "physicalLocation": {
+                "artifactLocation": {
+                  "uri": "controllers/users_controller.rb"
+                },
+                "region": {
+                  "startLine": 24
+                }
+              }
+            }
+          ],
+          "level": "warning"
+        },
+        {
+          "ruleId": "brakeman.command-injection",
+          "message": {
+            "text": "Possible command injection"
+          },
+          "locations": [
+            {
+              "physicalLocation": {
+                "artifactLocation": {
+                  "uri": "app.rb"
+                },
+                "region": {
+                  "startLine": 44
+                }
+              }
+            }
+          ],
+          "level": "warning"
+        },
+        {
+          "ruleId": "brakeman.command-injection",
+          "message": {
+            "text": "Possible command injection"
+          },
+          "locations": [
+            {
+              "physicalLocation": {
+                "artifactLocation": {
+                  "uri": "models/user.rb"
+                },
+                "region": {
+                  "startLine": 31
+                }
+              }
+            }
+          ],
+          "level": "warning"
+        },
+        {
+          "ruleId": "brakeman.dangerous-eval",
+          "message": {
+            "text": "Dynamic code evaluation"
+          },
+          "locations": [
+            {
+              "physicalLocation": {
+                "artifactLocation": {
+                  "uri": "models/user.rb"
+                },
+                "region": {
+                  "startLine": 8
+                }
+              }
+            }
+          ],
+          "level": "warning"
+        },
+        {
+          "ruleId": "brakeman.command-injection",
+          "message": {
+            "text": "Possible command injection"
+          },
+          "locations": [
+            {
+              "physicalLocation": {
+                "artifactLocation": {
+                  "uri": "app.rb"
+                },
+                "region": {
+                  "startLine": 11
+                }
+              }
+            }
+          ],
+          "level": "warning"
+        },
+        {
+          "ruleId": "brakeman.command-injection",
+          "message": {
+            "text": "Possible command injection"
+          },
+          "locations": [
+            {
+              "physicalLocation": {
+                "artifactLocation": {
+                  "uri": "app.rb"
+                },
+                "region": {
+                  "startLine": 15
+                }
+              }
+            }
+          ],
+          "level": "warning"
+        },
+        {
+          "ruleId": "brakeman.mass-assignment",
+          "message": {
+            "text": "Potentially dangerous key allowed for mass assignment"
+          },
+          "locations": [
+            {
+              "physicalLocation": {
+                "artifactLocation": {
+                  "uri": "controllers/users_controller.rb"
+                },
+                "region": {
+                  "startLine": 30
+                }
+              }
+            }
+          ],
+          "level": "error"
+        }
+      ]
+    }
+  ]
+}
