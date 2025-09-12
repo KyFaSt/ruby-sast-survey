@@ -126,7 +126,7 @@ The application contains intentionally vulnerable Ruby code to test SAST tool de
 - Comprehensive query suites for multiple languages
 
 **Weaknesses**:
-- Slow execution (not suitable for fast CI/CD)
+- Slow execution
 - Complex setup and query development
 - Limited Ruby security query coverage compared to Java/C#
 
@@ -199,6 +199,11 @@ The application contains intentionally vulnerable Ruby code to test SAST tool de
    # DevSkim - Microsoft security linter
    devskim analyze -I . -O docs/results/devskim.sarif -f sarif
    devskim analyze -I . -O docs/results/devskim.txt -f text
+   ```
+
+   **Or run all tools with a single script**:
+   ```bash
+   ./run-all-tools.sh
    ```
 
 4. **Run all tools via GitHub Actions**:

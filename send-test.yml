@@ -1,0 +1,25 @@
+rules:
+  - id: dangerous-send-method
+    message: "Dangerous use of send() method with user input"
+    languages:
+      - ruby
+    severity: ERROR
+    patterns:
+      - pattern-either:
+          - pattern: |
+              $OBJ.send($METHOD, ...)
+          - pattern: |
+              send($METHOD, ...)
+    pattern-inside: |
+      def $FUNC(...)
+        ...
+      end
+    metavariable-pattern:
+      metavariable: $METHOD
+      patterns:
+        - pattern-either:
+            - pattern: params[...]
+            - pattern: $VAR
+    pattern-where-python: |
+      # Check if $VAR might come from user input
+      vars().get('$VAR', '').startswith('param') or 'input' in vars().get('$VAR', '')
