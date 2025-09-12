@@ -24,6 +24,9 @@ ruby-sast-survey/
 │       ├── ast-grep.yml
 │       ├── devskim.yml
 │       └── codeql.yml
+├── .githooks/                  # Optional git hooks for fast security checks
+│   ├── pre-push               # RuboCop, Brakeman before push
+│   └── commit-msg             # Quick security pattern checks
 ├── ast-grep-rules/
 │   ├── sql-injection.yml
 │   └── command-injection.yml
@@ -208,6 +211,56 @@ The application contains intentionally vulnerable Ruby code to test SAST tool de
 
 4. **Run all tools via GitHub Actions**:
    Push to repository or create PR to trigger all workflows.
+
+## Git Hooks for Fast Security Checks
+
+For developers who want immediate security feedback during their workflow, this project includes pre-configured git hooks that run fast SAST tools before pushing code.
+
+### Available Git Hooks
+
+**Pre-Push Hook** (`.githooks/pre-push`):
+- **RuboCop**: Fast Ruby static analysis with security cops
+- **Brakeman**: Rails security scanner (usually completes in seconds)
+- **AST-grep**: Fast structural pattern matching (if custom rules exist)
+
+**Commit-Msg Hook** (`.githooks/commit-msg`):
+- Scans commit messages for sensitive terms
+- Quick checks for hardcoded secrets in staged files
+- Warns about dangerous patterns like `eval()` and command injection
+
+### Enable Git Hooks
+
+```bash
+# 1. Configure git to use the project's hooks directory
+git config core.hooksPath .githooks
+
+# 2. Edit the hook files to uncomment the tools you want to use
+# All commands are commented out by default for safety
+
+```
+
+### Why These Tools for Git Hooks?
+
+**✅ Recommended for Hooks:**
+- **RuboCop**: Very fast (< 1 second), catches common security anti-patterns
+- **Brakeman**: Fast for most codebases (< 5 seconds), high-confidence security findings
+- **AST-grep**: Fast structural matching, good for team-specific patterns
+
+**❌ Not Recommended for Hooks:**
+- **CodeQL**: Too slow (1-5 minutes), better for CI/CD
+- **Opengrep**: Moderate speed with community rules, can slow down commits
+- **DevSkim**: High false positive rate, better for CI/CD review
+- **Sorbet**: Type checking focus, not security-specific
+
+### Hook Philosophy
+
+The git hooks are designed to:
+- **Fail Fast**: Catch obvious security issues before they reach the repository
+- **Stay Fast**: Never slow down the development workflow
+- **Stay Optional**: All commands are commented out by default
+- **Complement CI**: Let GitHub Actions handle comprehensive scanning
+
+For complete security coverage, rely on the GitHub Actions workflows that run all tools including the slower, more comprehensive ones.
 
 ## Testing GitHub Actions Locally with Act
 

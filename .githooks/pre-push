@@ -1,0 +1,58 @@
+#!/bin/bash
+
+# Ruby SAST Pre-Push Hook
+#
+# This hook runs fast SAST tools before pushing code to prevent
+# vulnerable code from being pushed to the repository.
+#
+# To enable this hook:
+# 1. Make it executable: chmod +x .githooks/pre-push
+# 2. Configure git to use this hooks directory: git config core.hooksPath .githooks
+# 3. Uncomment the tools you want to run
+#
+# Note: All commands are commented out by default to prevent accidental activation.
+
+set -e
+
+echo "🔍 Running pre-push SAST checks..."
+
+# RuboCop - Fast Ruby static analysis with security cops
+# Recommended: Always run for Ruby projects (very fast)
+#echo "Running RuboCop..."
+#if ! bundle exec rubocop --display-only-fail-level-offenses; then
+#  echo "❌ RuboCop found issues. Fix them before pushing."
+#  echo "Run 'bundle exec rubocop -a' to auto-fix some issues."
+#  exit 1
+#fi
+#echo "✅ RuboCop passed"
+
+# Brakeman - Rails security scanner
+# Recommended: Run for Rails projects (usually fast)
+#echo "Running Brakeman..."
+#if ! bundle exec brakeman --quiet --no-pager --force; then
+#  echo "❌ Brakeman found security issues. Review and fix before pushing."
+#  echo "Run 'bundle exec brakeman --interactive-ignore' to manage findings."
+#  exit 1
+#fi
+#echo "✅ Brakeman passed"
+
+# AST-grep - Fast structural pattern matching
+# Optional: Enable if you have custom security rules
+#echo "Running AST-grep..."
+#if ! ast-grep scan --error-on-empty=false; then
+#  echo "❌ AST-grep found security patterns. Review findings before pushing."
+#  exit 1
+#fi
+#echo "✅ AST-grep passed"
+
+# Note: The following tools are NOT recommended for pre-push hooks:
+#
+# ❌ CodeQL - Too slow (can take 1-5 minutes)
+# ❌ Opengrep with community rules - Moderate speed, better for CI/CD
+# ❌ DevSkim - High false positive rate, better for CI/CD
+# ❌ Sorbet - Type checking focus, not security
+
+echo "🎉 All pre-push SAST checks completed successfully!"
+echo ""
+echo "💡 Tip: For comprehensive security scanning, let the GitHub Actions"
+echo "   workflows run all tools including the slower ones (CodeQL, Opengrep)."

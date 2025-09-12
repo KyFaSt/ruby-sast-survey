@@ -1,0 +1,51 @@
+#!/bin/bash
+
+# Ruby SAST Commit-Msg Hook
+#
+# This hook runs very fast security checks on commit messages and staged files.
+# It's designed to catch obvious security issues early in the development process.
+#
+# To enable this hook:
+# 1. Make it executable: chmod +x .githooks/commit-msg
+# 2. Configure git to use this hooks directory: git config core.hooksPath .githooks
+# 3. Uncomment the checks you want to run
+#
+# Note: All commands are commented out by default to prevent accidental activation.
+
+# Get the commit message file
+COMMIT_MSG_FILE=$1
+
+# Check for common security anti-patterns in commit messages
+#echo "🔍 Checking commit message for security concerns..."
+
+# Warn about commits that might introduce security issues
+#if grep -qi "password\|secret\|key\|token\|credential" "$COMMIT_MSG_FILE"; then
+#  echo "⚠️  Warning: Commit message mentions sensitive terms."
+#  echo "   Please ensure no credentials are included in the commit."
+#fi
+
+# Check staged files for obvious security issues
+#echo "🔍 Running quick security checks on staged files..."
+
+# Check for hardcoded secrets in staged files
+#if git diff --cached --name-only | xargs grep -l "password.*=" 2>/dev/null; then
+#  echo "⚠️  Warning: Staged files may contain hardcoded passwords."
+#  echo "   Files with 'password=' patterns:"
+#  git diff --cached --name-only | xargs grep -l "password.*=" 2>/dev/null | sed 's/^/   - /'
+#fi
+
+# Check for eval() usage in Ruby files
+#if git diff --cached --name-only "*.rb" | xargs grep -l "eval(" 2>/dev/null; then
+#  echo "⚠️  Warning: Ruby files contain eval() usage."
+#  echo "   Consider using safer alternatives. Files:"
+#  git diff --cached --name-only "*.rb" | xargs grep -l "eval(" 2>/dev/null | sed 's/^/   - /'
+#fi
+
+# Check for system() calls with user input
+#if git diff --cached --name-only "*.rb" | xargs grep -l "system.*params\|system.*\#{" 2>/dev/null; then
+#  echo "⚠️  Warning: Potential command injection in system() calls."
+#  echo "   Files with suspicious system() usage:"
+#  git diff --cached --name-only "*.rb" | xargs grep -l "system.*params\|system.*\#{" 2>/dev/null | sed 's/^/   - /'
+#fi
+
+#echo "✅ Commit message hook completed"
