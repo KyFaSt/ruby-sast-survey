@@ -102,7 +102,7 @@ jobs:
         ruby convert_astgrep_to_sarif.rb
         
     - name: Upload AST-grep SARIF results
-      uses: github/codeql-action/upload-sarif@v3
+      uses: github/codeql-action/upload-sarif@v4
       with:
         sarif_file: results-actions/ast-grep-results.sarif
         category: ast-grep

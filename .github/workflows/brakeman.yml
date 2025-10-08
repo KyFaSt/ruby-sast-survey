@@ -93,7 +93,7 @@ jobs:
         ruby convert_brakeman_to_sarif.rb
         
     - name: Upload Brakeman SARIF results
-      uses: github/codeql-action/upload-sarif@v3
+      uses: github/codeql-action/upload-sarif@v4
       with:
         sarif_file: results-actions/brakeman-results.sarif
         category: brakeman
