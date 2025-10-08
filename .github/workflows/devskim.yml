@@ -34,7 +34,7 @@ jobs:
         devskim analyze -I . -O results-actions/devskim-results.json -f text
         
     - name: Upload DevSkim SARIF results
-      uses: github/codeql-action/upload-sarif@v3
+      uses: github/codeql-action/upload-sarif@v4
       with:
         sarif_file: results-actions/devskim-results.sarif
         category: devskim
